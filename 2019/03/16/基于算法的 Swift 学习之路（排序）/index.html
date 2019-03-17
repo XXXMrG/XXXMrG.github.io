@@ -1,0 +1,821 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="zh-Hans">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Swift,">
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="排序这里给出了六大排序的 Swift 语言实现，大部分代码是基于算法4th 的 JAVA 实现直接实现的，也有充分利用 Swift 语言特性的更为简洁的实现。代码中涉及到的 Swift 特性，我选择用算法这样一种实际应用情况来为大家阐述，更为易懂和实用。 选择排序123456789101112131415161718func selectionSort&amp;lt;T: Comparable&amp;gt;(">
+<meta name="keywords" content="Swift">
+<meta property="og:type" content="article">
+<meta property="og:title" content="基于算法的 Swift 学习之路（排序）">
+<meta property="og:url" content="http://yoursite.com/2019/03/16/基于算法的 Swift 学习之路（排序）/index.html">
+<meta property="og:site_name" content="旧港">
+<meta property="og:description" content="排序这里给出了六大排序的 Swift 语言实现，大部分代码是基于算法4th 的 JAVA 实现直接实现的，也有充分利用 Swift 语言特性的更为简洁的实现。代码中涉及到的 Swift 特性，我选择用算法这样一种实际应用情况来为大家阐述，更为易懂和实用。 选择排序123456789101112131415161718func selectionSort&amp;lt;T: Comparable&amp;gt;(">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2019-03-16T17:00:00.008Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="基于算法的 Swift 学习之路（排序）">
+<meta name="twitter:description" content="排序这里给出了六大排序的 Swift 语言实现，大部分代码是基于算法4th 的 JAVA 实现直接实现的，也有充分利用 Swift 语言特性的更为简洁的实现。代码中涉及到的 Swift 特性，我选择用算法这样一种实际应用情况来为大家阐述，更为易懂和实用。 选择排序123456789101112131415161718func selectionSort&amp;lt;T: Comparable&amp;gt;(">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    version: '5.1.4',
+    sidebar: {"position":"right","display":"post","offset":12,"b2t":false,"scrollpercent":true,"onmobile":true},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2019/03/16/基于算法的 Swift 学习之路（排序）/">
+
+
+
+
+
+  <title>基于算法的 Swift 学习之路（排序） | 旧港</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-right page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">旧港</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/03/16/基于算法的 Swift 学习之路（排序）/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Keith">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="https://i.loli.net/2019/03/17/5c8e231b98718.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="旧港">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">基于算法的 Swift 学习之路（排序）</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-03-16T23:15:00+08:00">
+                2019-03-16
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/iOS-Swift/" itemprop="url" rel="index">
+                    <span itemprop="name">iOS & Swift</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  3.3k
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  15
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <hr>
+<h2 id="排序"><a href="#排序" class="headerlink" title="排序"></a>排序</h2><p>这里给出了六大排序的 Swift 语言实现，大部分代码是基于算法4th 的 JAVA 实现直接实现的，也有充分利用 Swift 语言特性的更为简洁的实现。<br>代码中涉及到的 Swift 特性，我选择用算法这样一种实际应用情况来为大家阐述，更为易懂和实用。</p>
+<h2 id="选择排序"><a href="#选择排序" class="headerlink" title="选择排序"></a>选择排序</h2><figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">selectionSort</span>&lt;T: Comparable&gt;<span class="params">(<span class="number">_</span> array: [T])</span></span> -&gt; [<span class="type">T</span>] &#123;</span><br><span class="line">    <span class="keyword">var</span> a = array</span><br><span class="line">    <span class="keyword">let</span> <span class="type">N</span> = a.<span class="built_in">count</span></span><br><span class="line">    <span class="keyword">var</span> <span class="built_in">count</span> = <span class="number">0</span></span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> <span class="number">0</span>..&lt;<span class="type">N</span> &#123;</span><br><span class="line">        <span class="keyword">var</span> <span class="built_in">min</span> = i</span><br><span class="line">        <span class="keyword">for</span> j <span class="keyword">in</span> (i + <span class="number">1</span>)..&lt;<span class="type">N</span> &#123;</span><br><span class="line">            <span class="keyword">if</span> a[j] &lt; a[<span class="built_in">min</span>] &#123;</span><br><span class="line">                <span class="built_in">min</span> = j</span><br><span class="line">                <span class="built_in">count</span> += <span class="number">1</span></span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">// Array 库函数，交换两个元素</span></span><br><span class="line">        a.swapAt(i, <span class="built_in">min</span>)</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">"selectionSort cost \(count)"</span>)</span><br><span class="line">    <span class="keyword">return</span> a</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>最简单的排序方式，不断选择最小的元素移到第一个元素，因此是个稳定的算法，这里我们要强调的有两个，第一个就是我们在下面经常用到的 Array.swapAt(_ : Int, _ : Int) ，Swift 直接为我们封装好了交换数组两个元素的方法，简单而高效。<br>接下来要说的就是 Swift 中的泛型，我们在这里为方法定义了一个泛型 T 并且要求这个泛型要实现 Comparable 协议，这于算四里直接使用 JAVA 中的 Comparable 超类差不多，但是泛型就意味着我们需要在调用这个方法的时候明确指出这个泛型的真正类型，这种问题常常并不会出现在函数泛型的使用中，因为我们既然为函数声明了泛型，就一定会为其传入相应的参数，Swift 会通过参数自动推断出该泛型。<br>但是我们要知道，同样的泛型声明方法也是可以在类身上的，我们在 JAVA 中为一个泛型类声明的时候要明显的给出实际类型，但是在 Swift 中，我们除了这样显示给出泛型外，如果我们的构造方法里传入了该类型的参数，那么我们就无需再重复声明泛型，Swift 会帮我们推断出该泛型，同时对于这个对象本身，该泛型已经确定，不能再更改了，否则会出现一个类中两个泛型的困扰。<br>关于 Comparable 协议，任何遵循了该协议的变量都自动拥有该协议中包含的几个方法 <code>&lt; &gt; &lt;= &gt;=</code> 等，也就跟其字面意思相同，这是一个可以比较的变量。<br>同样的协议还有 Equalable ，其包含的方法是 <code>== != `</code></p>
+<h2 id="插入排序（冒泡排序）"><a href="#插入排序（冒泡排序）" class="headerlink" title="插入排序（冒泡排序）"></a>插入排序（冒泡排序）</h2><figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">insertionSort</span>&lt;T&gt;<span class="params">(<span class="number">_</span> array: [T], <span class="number">_</span> isOrderedBefore: <span class="params">(T, T)</span></span></span> -&gt; <span class="type">Bool</span>) -&gt; [<span class="type">T</span>] &#123;</span><br><span class="line">    <span class="keyword">var</span> a = array</span><br><span class="line">    <span class="keyword">var</span> <span class="built_in">count</span> = <span class="number">0</span></span><br><span class="line">    <span class="keyword">for</span> x <span class="keyword">in</span> <span class="number">1</span>..&lt;a.<span class="built_in">count</span> &#123;</span><br><span class="line">        <span class="keyword">var</span> y = x</span><br><span class="line">        <span class="keyword">while</span> y &gt; <span class="number">0</span> &amp;&amp; isOrderedBefore(a[y], a[y - <span class="number">1</span>]) &#123;</span><br><span class="line">            a.swapAt(y - <span class="number">1</span>, y)</span><br><span class="line">            <span class="built_in">count</span> += <span class="number">1</span></span><br><span class="line">            y -= <span class="number">1</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">"insert cost \(count)"</span>)</span><br><span class="line">    <span class="keyword">return</span> a</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>插入排序，很多高级排序的基础，也是对于小型数组排序最快的排序方法。<br>对于有序数组也有着很高的排序效率</p>
+<p>这里涉及的 Swift 特性在于那个特别长的参数，也就是那个函数参数。<br>我们知道在 Swift 中，函数是一等类型，可以作为返回值和参数直接使用。<br>这一次我们的泛型并没有直接实现 Comparable 协议，而是用了一个函数直接将操作符 <code>&gt; &lt;</code> 直接当作参数传入，因此可以通过参数来控制递增排序和递减排序，关于 Swift 中的操作符，实际上也是一个函数，我们也可以通过重载为其增加更多的方法。</p>
+<h2 id="希尔排序"><a href="#希尔排序" class="headerlink" title="希尔排序"></a>希尔排序</h2><figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">shellSort</span>&lt;T&gt; <span class="params">(<span class="number">_</span> array: [T], <span class="number">_</span> isOrderedBefore: <span class="params">(T, T)</span></span></span> -&gt; <span class="type">Bool</span>) -&gt; [<span class="type">T</span>] &#123;</span><br><span class="line">    <span class="keyword">var</span> a = array</span><br><span class="line">    <span class="keyword">let</span> <span class="type">N</span> = a.<span class="built_in">count</span></span><br><span class="line">    <span class="keyword">var</span> h = <span class="number">1</span></span><br><span class="line">    <span class="keyword">var</span> <span class="built_in">count</span> = <span class="number">0</span></span><br><span class="line">    <span class="comment">// 递增序列</span></span><br><span class="line">    <span class="keyword">while</span> h &lt; <span class="type">N</span> / <span class="number">3</span> &#123;</span><br><span class="line">        h = <span class="number">3</span> * h + <span class="number">1</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">while</span> h &gt;= <span class="number">1</span> &#123;</span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> h..&lt;<span class="type">N</span> &#123;</span><br><span class="line">            <span class="keyword">var</span> j = i</span><br><span class="line">            <span class="keyword">while</span> j &gt;= h &amp;&amp; isOrderedBefore(a[j], a[j-h]) &#123;</span><br><span class="line">                a.swapAt(j, j-h)</span><br><span class="line">                <span class="built_in">count</span> += <span class="number">1</span></span><br><span class="line">                <span class="comment">//print(a)</span></span><br><span class="line">                j -= h</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        h = h / <span class="number">3</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">"shell cost \(count)"</span>)</span><br><span class="line">    <span class="keyword">return</span> a</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>插入排序的优化版，通过递增序列使其性能大大提升。</p>
+<h2 id="归并排序"><a href="#归并排序" class="headerlink" title="归并排序"></a>归并排序</h2><p>这也是个稳定的排序</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Merge</span>&lt;<span class="title">T</span>: <span class="title">Comparable</span>&gt; </span>&#123;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">var</span> aux = [<span class="type">T</span>]()</span><br><span class="line">    <span class="keyword">var</span> data = [<span class="type">T</span>]()</span><br><span class="line">    <span class="keyword">init</span>(<span class="number">_</span> array: [<span class="type">T</span>]) &#123;</span><br><span class="line">        data = array</span><br><span class="line">        <span class="keyword">self</span>.mergeSort(&amp;data, lo: <span class="number">0</span>, hi: data.<span class="built_in">count</span> - <span class="number">1</span>)</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">// 使用 inout 来操作实际参数</span></span><br><span class="line">    <span class="function"><span class="keyword">func</span> <span class="title">merge</span><span class="params">(<span class="number">_</span> array: <span class="keyword">inout</span> [T], <span class="number">_</span> lo: Int, <span class="number">_</span> mid: Int, <span class="number">_</span> hi: Int)</span></span>&#123;</span><br><span class="line">        <span class="keyword">var</span> i = lo</span><br><span class="line">        <span class="keyword">var</span> j = mid + <span class="number">1</span></span><br><span class="line">        aux = array</span><br><span class="line">        <span class="keyword">for</span> k <span class="keyword">in</span> lo...hi &#123;</span><br><span class="line">            <span class="keyword">if</span> i &gt; mid &#123;</span><br><span class="line">                array[k] = aux[j]</span><br><span class="line">                j += <span class="number">1</span></span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">else</span> <span class="keyword">if</span> j &gt; hi &#123;</span><br><span class="line">                array[k] = aux[i]</span><br><span class="line">                i += <span class="number">1</span></span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">else</span> <span class="keyword">if</span> aux[j] &lt; aux[i] &#123;</span><br><span class="line">                array[k] = aux[j]</span><br><span class="line">                j += <span class="number">1</span></span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">else</span> &#123;</span><br><span class="line">                array[k] = aux[i]</span><br><span class="line">                i += <span class="number">1</span></span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    </span><br><span class="line">    </span><br><span class="line">    <span class="comment">// merge high to low</span></span><br><span class="line">    <span class="function"><span class="keyword">func</span> <span class="title">mergeSort</span><span class="params">(<span class="number">_</span> array: <span class="keyword">inout</span> [T], lo: Int, hi: Int)</span></span>&#123;</span><br><span class="line">        <span class="keyword">if</span> hi &lt;= lo &#123;</span><br><span class="line">            <span class="keyword">return</span></span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">let</span> mid = lo + (hi - lo) / <span class="number">2</span></span><br><span class="line">        mergeSort(&amp;array, lo: lo, hi: mid)</span><br><span class="line">        mergeSort(&amp;array, lo: mid + <span class="number">1</span>, hi: hi)</span><br><span class="line">        merge(&amp;array, lo, mid, hi)</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="comment">// merge low to high</span></span><br><span class="line">    <span class="function"><span class="keyword">func</span> <span class="title">mergeBU</span><span class="params">(<span class="number">_</span> array: [T])</span></span> -&gt; [<span class="type">T</span>] &#123;</span><br><span class="line">        <span class="keyword">var</span> a = array</span><br><span class="line">        <span class="keyword">let</span> <span class="type">N</span> = a.<span class="built_in">count</span></span><br><span class="line">        <span class="comment">// 归并子数组大小</span></span><br><span class="line">        <span class="keyword">var</span> sz = <span class="number">1</span></span><br><span class="line">        <span class="keyword">while</span> sz &lt; <span class="type">N</span> &#123;</span><br><span class="line">            <span class="keyword">var</span> lo = <span class="number">0</span></span><br><span class="line">            <span class="keyword">while</span> lo &lt; <span class="type">N</span> - sz &#123;</span><br><span class="line">                <span class="comment">// 用 N - 1 防止数组越界</span></span><br><span class="line">                merge(&amp;a, lo, lo+sz-<span class="number">1</span>, <span class="built_in">min</span>(lo+sz+sz-<span class="number">1</span>, <span class="type">N</span>-<span class="number">1</span>))</span><br><span class="line">                <span class="comment">// 参与归并的数组大小是子数组的两倍</span></span><br><span class="line">                lo += sz + sz</span><br><span class="line">            &#125;</span><br><span class="line">            sz = sz + sz</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> a</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="comment">// 不操作原数组的方式</span></span><br><span class="line">    <span class="function"><span class="keyword">func</span> <span class="title">merge</span><span class="params">(leftPile: [T], rightPile: [T])</span></span> -&gt; [<span class="type">T</span>] &#123;</span><br><span class="line">        <span class="comment">// 1</span></span><br><span class="line">        <span class="keyword">var</span> leftIndex = <span class="number">0</span></span><br><span class="line">        <span class="keyword">var</span> rightIndex = <span class="number">0</span></span><br><span class="line">        </span><br><span class="line">        <span class="comment">// 2</span></span><br><span class="line">        <span class="keyword">var</span> orderedPile = [<span class="type">T</span>]()</span><br><span class="line">        <span class="comment">// 为数组申请备用容量，减少长度动态变化的开销</span></span><br><span class="line">        orderedPile.reserveCapacity(leftPile.<span class="built_in">count</span> + rightPile.<span class="built_in">count</span>)</span><br><span class="line">        </span><br><span class="line">        <span class="comment">// 3</span></span><br><span class="line">        <span class="comment">// 两个归并的数组有一个用完就会停止判断</span></span><br><span class="line">        <span class="keyword">while</span> leftIndex &lt; leftPile.<span class="built_in">count</span> &amp;&amp; rightIndex &lt; rightPile.<span class="built_in">count</span> &#123;</span><br><span class="line">            <span class="keyword">if</span> leftPile[leftIndex] &lt; rightPile[rightIndex] &#123;</span><br><span class="line">                orderedPile.append(leftPile[leftIndex])</span><br><span class="line">                leftIndex += <span class="number">1</span></span><br><span class="line">            &#125; <span class="keyword">else</span> <span class="keyword">if</span> leftPile[leftIndex] &gt; rightPile[rightIndex] &#123;</span><br><span class="line">                orderedPile.append(rightPile[rightIndex])</span><br><span class="line">                rightIndex += <span class="number">1</span></span><br><span class="line">            &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                <span class="comment">// 如果一样大，各放入归并的数组一次</span></span><br><span class="line">                orderedPile.append(leftPile[leftIndex])</span><br><span class="line">                leftIndex += <span class="number">1</span></span><br><span class="line">                orderedPile.append(rightPile[rightIndex])</span><br><span class="line">                rightIndex += <span class="number">1</span></span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        <span class="comment">// 4</span></span><br><span class="line">        <span class="comment">// 右侧数组用完</span></span><br><span class="line">        <span class="keyword">while</span> leftIndex &lt; leftPile.<span class="built_in">count</span> &#123;</span><br><span class="line">            orderedPile.append(leftPile[leftIndex])</span><br><span class="line">            leftIndex += <span class="number">1</span></span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">// 左侧数组用完</span></span><br><span class="line">        <span class="keyword">while</span> rightIndex &lt; rightPile.<span class="built_in">count</span> &#123;</span><br><span class="line">            orderedPile.append(rightPile[rightIndex])</span><br><span class="line">            rightIndex += <span class="number">1</span></span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">return</span> orderedPile</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">func</span> <span class="title">mergeSort</span><span class="params">(<span class="number">_</span> array: [T])</span></span> -&gt; [<span class="type">T</span>] &#123;</span><br><span class="line">        <span class="comment">// guard 更关注的是 else</span></span><br><span class="line">        <span class="keyword">guard</span> array.<span class="built_in">count</span> &gt; <span class="number">1</span> <span class="keyword">else</span> &#123; <span class="keyword">return</span> array &#125;    <span class="comment">// 1</span></span><br><span class="line">        </span><br><span class="line">        <span class="keyword">let</span> middleIndex = array.<span class="built_in">count</span> / <span class="number">2</span>              <span class="comment">// 2</span></span><br><span class="line">        </span><br><span class="line">        <span class="keyword">let</span> leftArray = mergeSort(<span class="type">Array</span>(array[<span class="number">0</span>..&lt;middleIndex]))             <span class="comment">// 3</span></span><br><span class="line">        </span><br><span class="line">        <span class="keyword">let</span> rightArray = mergeSort(<span class="type">Array</span>(array[middleIndex..&lt;array.<span class="built_in">count</span>]))  <span class="comment">// 4</span></span><br><span class="line">        </span><br><span class="line">        <span class="keyword">return</span> merge(leftPile: leftArray, rightPile: rightArray)             <span class="comment">// 5</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>涉及到的 Swift 特性：</p>
+<ul>
+<li>Array.reserveCapacity</li>
+<li>inout 和 &amp;</li>
+<li>subsequence</li>
+</ul>
+<p>在归并排序中，我们在知道需要的额外数组长度的情况下使用了 reserveCapacity 这个方法来为数组增加备用容量，我们都知道 Swift 中的数组跟 js python 相同，都是动态数组，多数情况下我们是不需要关心数组大小的，但是通过这种事前为数组增加容量的方式可以让我们在需要大量 append 操作的时候减少系统消耗。</p>
+<p>inout 和 &amp; ，Swift 与 JAVA 不同，对于对象类参数的处理是直接修改其原对象信息。Swift 仍然继承了 C 的基础，对象型参数会复制一份到函数中，同时，这个变量是个 let 型，也就是说我们并不能直接操作这个变量，对这个变量的操作就更不可能影响到函数外。这是 Swift 为了贯彻其安全的理念的措施。<br>那么对于需要直接更改实际变量的操作呢，我们就要用到 inout 和 &amp; 这一对操作符，有一点像 C 中的指针，带有 inout 的参数才能被直接访问和修改。</p>
+<p>subsequence ，在最后的方法中我们直接使用区间运算作为数组的下标来访问同一个数组的前后两部分，但是我们要注意的是，这样得到的实际上并非是个数组，而是个遵守了 subsequence 的类型，而数组，他实现的是 sequence 协议，这两个还不太一样，因此我们在传入参数的时候将其进行了类型转换。</p>
+<h2 id="快速排序"><a href="#快速排序" class="headerlink" title="快速排序"></a>快速排序</h2><figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Quick</span>&lt;<span class="title">T</span>: <span class="title">Comparable</span>&gt; </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> data: [<span class="type">T</span>]</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">init</span>(<span class="number">_</span> array: [<span class="type">T</span>]) &#123;</span><br><span class="line">        <span class="keyword">self</span>.data = array</span><br><span class="line">        <span class="comment">// 打乱一个数组 shuffle, shuffled</span></span><br><span class="line">        <span class="comment">// https://developer.apple.com/documentation/swift/array/2994757-shuffled</span></span><br><span class="line">        data.shuffle()</span><br><span class="line">        <span class="comment">//sort(&amp;data, lo: 0, hi: data.count - 1)</span></span><br><span class="line">        <span class="comment">//quick3Sort(&amp;data, lo: 0, hi: data.count - 1)</span></span><br><span class="line">        data = quicksort(data)</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">// 最经典的切分方式，取第一个元素作为基准</span></span><br><span class="line">    <span class="function"><span class="keyword">func</span> <span class="title">sort</span><span class="params">(<span class="number">_</span> array: <span class="keyword">inout</span> [T], lo: Int, hi: Int)</span></span> &#123;</span><br><span class="line">        <span class="keyword">if</span> hi &lt;= lo &#123;</span><br><span class="line">            <span class="keyword">return</span></span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">let</span> j = <span class="built_in">partition</span>(&amp;array, lo: lo, hi: hi)</span><br><span class="line">        <span class="built_in">sort</span>(&amp;array, lo: lo, hi: j - <span class="number">1</span>)</span><br><span class="line">        <span class="built_in">sort</span>(&amp;array, lo: j + <span class="number">1</span>, hi: hi)</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">// 手写 partition 实际上可以使用高级操作符 filter 来直接完成切分</span></span><br><span class="line">    <span class="function"><span class="keyword">func</span> <span class="title">partition</span><span class="params">(<span class="number">_</span> array: <span class="keyword">inout</span> [T], lo: Int, hi: Int)</span></span> -&gt; <span class="type">Int</span> &#123;</span><br><span class="line">        <span class="keyword">var</span> i = lo</span><br><span class="line">        <span class="keyword">var</span> j = hi + <span class="number">1</span></span><br><span class="line">        <span class="keyword">let</span> v = array[lo]</span><br><span class="line">        <span class="keyword">while</span> <span class="literal">true</span> &#123;</span><br><span class="line">            i += <span class="number">1</span></span><br><span class="line">            <span class="keyword">while</span> array[i] &gt; v &#123;</span><br><span class="line">                <span class="keyword">if</span> i == hi &#123;</span><br><span class="line">                    <span class="keyword">break</span></span><br><span class="line">                &#125;</span><br><span class="line">                i += <span class="number">1</span></span><br><span class="line">            &#125;</span><br><span class="line">            j -= <span class="number">1</span></span><br><span class="line">            <span class="keyword">while</span> v &gt; array[j] &#123;</span><br><span class="line">                <span class="keyword">if</span> j == lo &#123;</span><br><span class="line">                    <span class="keyword">break</span></span><br><span class="line">                &#125;</span><br><span class="line">                j -= <span class="number">1</span></span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">if</span> i &gt;= j &#123;</span><br><span class="line">                <span class="keyword">break</span></span><br><span class="line">            &#125;</span><br><span class="line">            array.swapAt(i, j)</span><br><span class="line">        &#125;</span><br><span class="line">        array.swapAt(lo, j)</span><br><span class="line">        <span class="keyword">return</span> j</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="comment">// 更简洁的写法</span></span><br><span class="line">    <span class="function"><span class="keyword">func</span> <span class="title">quicksortHoare</span><span class="params">(<span class="number">_</span> a: <span class="keyword">inout</span> [T], low: Int, high: Int)</span></span> &#123;</span><br><span class="line">        <span class="keyword">if</span> low &lt; high &#123;</span><br><span class="line">            <span class="keyword">let</span> p = partitionHoare(&amp;a, low: low, high: high)</span><br><span class="line">            quicksortHoare(&amp;a, low: low, high: p)</span><br><span class="line">            quicksortHoare(&amp;a, low: p + <span class="number">1</span>, high: high)</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">func</span> <span class="title">partitionHoare</span><span class="params">(<span class="number">_</span> a: <span class="keyword">inout</span> [T], low: Int, high: Int)</span></span> -&gt; <span class="type">Int</span> &#123;</span><br><span class="line">        <span class="keyword">let</span> pivot = a[low]</span><br><span class="line">        <span class="keyword">var</span> i = low - <span class="number">1</span></span><br><span class="line">        <span class="keyword">var</span> j = high + <span class="number">1</span></span><br><span class="line">        </span><br><span class="line">        <span class="keyword">while</span> <span class="literal">true</span> &#123;</span><br><span class="line">            <span class="keyword">repeat</span> &#123; j -= <span class="number">1</span> &#125; <span class="keyword">while</span> a[j] &gt; pivot</span><br><span class="line">            <span class="keyword">repeat</span> &#123; i += <span class="number">1</span> &#125; <span class="keyword">while</span> a[i] &lt; pivot</span><br><span class="line">            </span><br><span class="line">            <span class="keyword">if</span> i &lt; j &#123;</span><br><span class="line">                a.swapAt(i, j)</span><br><span class="line">            &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                <span class="keyword">return</span> j</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 三向切分</span></span><br><span class="line">    <span class="function"><span class="keyword">func</span> <span class="title">quick3Sort</span><span class="params">(<span class="number">_</span> array: <span class="keyword">inout</span> [T], lo: Int, hi: Int)</span></span> &#123;</span><br><span class="line">        <span class="keyword">if</span> hi &lt;= lo &#123;</span><br><span class="line">            <span class="keyword">return</span></span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">var</span> lt = lo, i = lo + <span class="number">1</span>, gt = hi</span><br><span class="line">        <span class="keyword">let</span> v = array[lo]</span><br><span class="line">        <span class="keyword">while</span> i &lt;= gt &#123;</span><br><span class="line">            <span class="keyword">if</span> array[i] &lt; v &#123;</span><br><span class="line">                array.swapAt(lt, i)</span><br><span class="line">                lt += <span class="number">1</span></span><br><span class="line">                i += <span class="number">1</span></span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">else</span> <span class="keyword">if</span> v &lt; array[i] &#123;</span><br><span class="line">                array.swapAt(i, gt)</span><br><span class="line">                gt -= <span class="number">1</span></span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">else</span> &#123;</span><br><span class="line">                i += <span class="number">1</span></span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        quick3Sort(&amp;array, lo: lo, hi: lt - <span class="number">1</span>)</span><br><span class="line"></span><br><span class="line">        quick3Sort(&amp;array, lo: gt + <span class="number">1</span>, hi: hi)</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">// 三项切分，利用高级函数，效率并不太高</span></span><br><span class="line">    <span class="function"><span class="keyword">func</span> <span class="title">quicksort</span>&lt;T: Comparable&gt;<span class="params">(<span class="number">_</span> a: [T])</span></span> -&gt; [<span class="type">T</span>] &#123;</span><br><span class="line">        <span class="keyword">guard</span> a.<span class="built_in">count</span> &gt; <span class="number">1</span> <span class="keyword">else</span> &#123; <span class="keyword">return</span> a &#125;</span><br><span class="line">        </span><br><span class="line">        <span class="comment">//let pivot = a[a.count/2]</span></span><br><span class="line">        <span class="keyword">let</span> pivot = a[<span class="number">0</span>]</span><br><span class="line">        <span class="keyword">let</span> less = a.<span class="built_in">filter</span> &#123; $<span class="number">0</span> &lt; pivot &#125;</span><br><span class="line">        <span class="keyword">let</span> <span class="built_in">equal</span> = a.<span class="built_in">filter</span> &#123; $<span class="number">0</span> == pivot &#125;</span><br><span class="line">        <span class="keyword">let</span> greater = a.<span class="built_in">filter</span> &#123; $<span class="number">0</span> &gt; pivot &#125;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">return</span> quicksort(less) + <span class="built_in">equal</span> + quicksort(greater)</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">// 三向切分，取最后一个元素作为基准</span></span><br><span class="line">    <span class="function"><span class="keyword">func</span> <span class="title">partitionLomuto</span>&lt;T: Comparable&gt;<span class="params">(<span class="number">_</span> a: <span class="keyword">inout</span> [T], low: Int, high: Int)</span></span> -&gt; <span class="type">Int</span> &#123;</span><br><span class="line">        <span class="keyword">let</span> pivot = a[high]</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">var</span> i = low</span><br><span class="line">        <span class="keyword">for</span> j <span class="keyword">in</span> low..&lt;high &#123;</span><br><span class="line">            <span class="keyword">if</span> a[j] &lt;= pivot &#123;</span><br><span class="line">                (a[i], a[j]) = (a[j], a[i])</span><br><span class="line">                i += <span class="number">1</span></span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        (a[i], a[high]) = (a[high], a[i])</span><br><span class="line">        <span class="keyword">return</span> i</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">func</span> <span class="title">quicksortLomuto</span>&lt;T: Comparable&gt;<span class="params">(<span class="number">_</span> a: <span class="keyword">inout</span> [T], low: Int, high: Int)</span></span> &#123;</span><br><span class="line">        <span class="keyword">if</span> low &lt; high &#123;</span><br><span class="line">            <span class="keyword">let</span> p = partitionLomuto(&amp;a, low: low, high: high)</span><br><span class="line">            quicksortLomuto(&amp;a, low: low, high: p - <span class="number">1</span>)</span><br><span class="line">            quicksortLomuto(&amp;a, low: p + <span class="number">1</span>, high: high)</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>天下第一的快排</p>
+<p>涉及到的 Swift 特性：<br>有几个数组高级操作：</p>
+<ul>
+<li>shuffle()</li>
+<li>filter</li>
+</ul>
+<p>shuffle 和 shuffled ，求求你们不要再🦐几把手写那些鬼随机打乱算法了，人家写的好好的，一个直接操作数组，一个返回打乱后的数组。</p>
+<p>filter 这是个 Swift 4.2+ 增加的新方法，用于直接选出数组中符合某一类条件的元素，返回值是个数组，用在快排里简直爽到飞起，但是应该是现在的 oj 都还不支持这个函数，这个方法和 reduce ， map 都可能是面试中的重点。</p>
+<h2 id="堆排序"><a href="#堆排序" class="headerlink" title="堆排序"></a>堆排序</h2><figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 堆和优先队列</span></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Heap</span>&lt;<span class="title">T</span>: <span class="title">Comparable</span>&gt; </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> data = [<span class="type">T</span>]()</span><br><span class="line">    <span class="keyword">var</span> <span class="type">N</span> = <span class="number">0</span></span><br><span class="line">    <span class="keyword">init</span>(size: <span class="type">Int</span>) &#123;</span><br><span class="line">        data.reserveCapacity(size + <span class="number">1</span>)</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">func</span> <span class="title">insert</span><span class="params">(new: T)</span></span> &#123;</span><br><span class="line">        <span class="type">N</span> += <span class="number">1</span></span><br><span class="line">        data.append(new)</span><br><span class="line">        swim(<span class="type">N</span>)</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">// 大元素上浮</span></span><br><span class="line">    <span class="function"><span class="keyword">func</span> <span class="title">swim</span><span class="params">(<span class="number">_</span> k: Int)</span></span> &#123;</span><br><span class="line">        <span class="keyword">var</span> k = k</span><br><span class="line">        <span class="keyword">while</span> k &gt; <span class="number">1</span> &amp;&amp; data[k/<span class="number">2</span>] &lt; data[k] &#123;</span><br><span class="line">            <span class="comment">// 大节点不断上浮</span></span><br><span class="line">            data.swapAt(k/<span class="number">2</span>, k)</span><br><span class="line">            k = k / <span class="number">2</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="comment">// 小元素下沉</span></span><br><span class="line">    <span class="function"><span class="keyword">func</span> <span class="title">sink</span><span class="params">(<span class="number">_</span> k: Int)</span></span> &#123;</span><br><span class="line">        <span class="keyword">var</span> k = k</span><br><span class="line">        <span class="keyword">while</span> <span class="number">2</span>*k &lt;= <span class="type">N</span> &#123;</span><br><span class="line">            <span class="keyword">var</span> j = <span class="number">2</span> * k</span><br><span class="line">            <span class="keyword">if</span> j &lt; <span class="type">N</span> &amp;&amp; data[j] &lt; data[j+<span class="number">1</span>] &#123;</span><br><span class="line">                <span class="comment">// 左节点是较小的节点,选择右节点作为新的根结点</span></span><br><span class="line">                j += <span class="number">1</span></span><br><span class="line">            &#125;</span><br><span class="line">            <span class="comment">// 如果当前 k 号节点小于其父节点，下沉</span></span><br><span class="line">            <span class="keyword">guard</span> data[k] &lt; data[j] <span class="keyword">else</span> &#123; <span class="keyword">break</span> &#125;</span><br><span class="line">            data.swapAt(k, j)</span><br><span class="line">            k = j</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">func</span> <span class="title">delMax</span><span class="params">()</span></span> -&gt; <span class="type">T</span> &#123;</span><br><span class="line">        data.swapAt(<span class="number">1</span>, <span class="type">N</span>)</span><br><span class="line">        <span class="keyword">let</span> <span class="built_in">max</span> = data.remove(at: <span class="type">N</span>)</span><br><span class="line">        <span class="type">N</span> -= <span class="number">1</span></span><br><span class="line">        sink(<span class="number">1</span>)</span><br><span class="line">        <span class="keyword">return</span> <span class="built_in">max</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">heapSort</span> </span>&#123;</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">func</span> <span class="title">sort</span><span class="params">(<span class="number">_</span> array: <span class="keyword">inout</span> [Int])</span></span> &#123;</span><br><span class="line">        <span class="keyword">var</span> <span class="type">N</span> = array.<span class="built_in">count</span> - <span class="number">1</span></span><br><span class="line">        <span class="keyword">for</span> k <span class="keyword">in</span> <span class="built_in">stride</span>(from: <span class="type">N</span>/<span class="number">2</span>, through: <span class="number">1</span>, by: -<span class="number">1</span>) &#123;</span><br><span class="line">            sink(&amp;array, k, <span class="type">N</span>)</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">while</span> <span class="type">N</span> &gt; <span class="number">1</span> &#123;</span><br><span class="line">            array.swapAt(<span class="number">1</span>, <span class="type">N</span>)</span><br><span class="line">            <span class="type">N</span> -= <span class="number">1</span></span><br><span class="line">            sink(&amp;array, <span class="number">1</span>, <span class="type">N</span>)</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="comment">// 大元素上浮</span></span><br><span class="line">    <span class="function"><span class="keyword">func</span> <span class="title">swim</span><span class="params">(<span class="number">_</span> data: <span class="keyword">inout</span> [Int], <span class="number">_</span> k: Int, <span class="number">_</span> N: Int)</span></span> &#123;</span><br><span class="line">        <span class="keyword">var</span> k = k</span><br><span class="line">        <span class="keyword">while</span> k &gt; <span class="number">1</span> &amp;&amp; data[k/<span class="number">2</span>] &lt; data[k] &#123;</span><br><span class="line">            <span class="comment">// 大节点不断上浮</span></span><br><span class="line">            data.swapAt(k/<span class="number">2</span>, k)</span><br><span class="line">            k = k / <span class="number">2</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="comment">// 小元素下沉</span></span><br><span class="line">    <span class="function"><span class="keyword">func</span> <span class="title">sink</span><span class="params">(<span class="number">_</span> data: <span class="keyword">inout</span> [Int], <span class="number">_</span> k: Int, <span class="number">_</span> N: Int)</span></span> &#123;</span><br><span class="line">        <span class="keyword">var</span> k = k</span><br><span class="line">        <span class="keyword">while</span> <span class="number">2</span>*k &lt;= <span class="type">N</span> &#123;</span><br><span class="line">            <span class="keyword">var</span> j = <span class="number">2</span> * k</span><br><span class="line">            <span class="keyword">if</span> j &lt; <span class="type">N</span> &amp;&amp; data[j] &lt; data[j+<span class="number">1</span>] &#123;</span><br><span class="line">                <span class="comment">// 左节点是较小的节点,选择右节点作为新的根结点</span></span><br><span class="line">                j += <span class="number">1</span></span><br><span class="line">            &#125;</span><br><span class="line">            <span class="comment">// 如果当前 k 号节点小于其父节点，下沉</span></span><br><span class="line">            <span class="keyword">guard</span> data[k] &lt; data[j] <span class="keyword">else</span> &#123; <span class="keyword">break</span> &#125;</span><br><span class="line">            data.swapAt(k, j)</span><br><span class="line">            k = j</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>堆排序没啥的，基本都说完了。需要注意的就是这里的 for 循环和 python 的相同，不能带什么操作，同时倒序的话，可以用 reserve 或者是 stride 将步长设定为 -1。</p>
+<h2 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h2><p><a href="http://www.cocoachina.com/ios/20150929/13624.html" target="_blank" rel="noopener">总结 Swift 中随机数的使用 -  CocoaChina 苹果开发中文站 - 最热的iPhone开发社区 最热的苹果开发社区 最热的iPad开发社区</a></p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Swift/" rel="tag"># Swift</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/03/16/如何速成前端三件套 （HTML）/" rel="next" title="如何速成前端三件套 （HTML）">
+                <i class="fa fa-chevron-left"></i> 如何速成前端三件套 （HTML）
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+      <div id="sidebar-dimmer"></div>
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image" src="https://i.loli.net/2019/03/17/5c8e231b98718.jpg" alt="Keith">
+            
+              <p class="site-author-name" itemprop="name">Keith</p>
+              <p class="site-description motion-element" itemprop="description">Let's be the one</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">6</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">3</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">3</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/xxxmrg" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i></a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="mailto:mrgitservice@outlook.com" target="_blank" title="E-Mail">
+                      
+                        <i class="fa fa-fw fa-envelope"></i></a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://instagram.com/x_x_keith" target="_blank" title="Instagram">
+                      
+                        <i class="fa fa-fw fa-instagram"></i></a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#排序"><span class="nav-number">1.</span> <span class="nav-text">排序</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#选择排序"><span class="nav-number">2.</span> <span class="nav-text">选择排序</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#插入排序（冒泡排序）"><span class="nav-number">3.</span> <span class="nav-text">插入排序（冒泡排序）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#希尔排序"><span class="nav-number">4.</span> <span class="nav-text">希尔排序</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#归并排序"><span class="nav-number">5.</span> <span class="nav-text">归并排序</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#快速排序"><span class="nav-number">6.</span> <span class="nav-text">快速排序</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#堆排序"><span class="nav-number">7.</span> <span class="nav-text">堆排序</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Reference"><span class="nav-number">8.</span> <span class="nav-text">Reference</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Keith</span>
+
+  
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-area-chart"></i>
+    </span>
+    
+      <span class="post-meta-item-text">Site words total count&#58;</span>
+    
+    <span title="Site words total count">8.6k</span>
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Mist</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+          <span id="scrollpercent"><span>0</span>%</span>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
