@@ -79,20 +79,20 @@
 
 
 
-<meta name="description" content="从 n 个数中找出最大的 k 个数    全局排序最容易的方法，全部排序，取出最大的 k 个。时间复杂度取决于具体使用的排序算法。问题出在当数据数量特别大的时候，花费了很多时间在不需要的元素的排序上。 局部排序不再全局排序，纸堆最大的 k 个排序。相当于冒泡排序或者是选择排序，不断选择最大值放到前面。时间复杂度是 O(n * k)但是我们要注意，top-k 问题中的这 k 个最大元素是不需要有">
+<meta name="description" content="从 n 个数中找出最大的 k 个数    全局排序最容易的方法，全部排序，取出最大的 k 个。时间复杂度取决于具体使用的排序算法。问题出在当数据数量特别大的时候，花费了很多时间在不需要的元素的排序上。 局部排序不再全局排序，只对最大的 k 个排序。相当于冒泡排序或者是选择排序，不断选择最大值放到前面。时间复杂度是 O(n * k)但是我们要注意，top-k 问题中的这 k 个最大元素是不需要有">
 <meta name="keywords" content="Algorithm">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Top-K 问题">
 <meta property="og:url" content="https://xkeith.space/2019/03/25/arc-09/index.html">
 <meta property="og:site_name" content="旧港">
-<meta property="og:description" content="从 n 个数中找出最大的 k 个数    全局排序最容易的方法，全部排序，取出最大的 k 个。时间复杂度取决于具体使用的排序算法。问题出在当数据数量特别大的时候，花费了很多时间在不需要的元素的排序上。 局部排序不再全局排序，纸堆最大的 k 个排序。相当于冒泡排序或者是选择排序，不断选择最大值放到前面。时间复杂度是 O(n * k)但是我们要注意，top-k 问题中的这 k 个最大元素是不需要有">
+<meta property="og:description" content="从 n 个数中找出最大的 k 个数    全局排序最容易的方法，全部排序，取出最大的 k 个。时间复杂度取决于具体使用的排序算法。问题出在当数据数量特别大的时候，花费了很多时间在不需要的元素的排序上。 局部排序不再全局排序，只对最大的 k 个排序。相当于冒泡排序或者是选择排序，不断选择最大值放到前面。时间复杂度是 O(n * k)但是我们要注意，top-k 问题中的这 k 个最大元素是不需要有">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="https://i.loli.net/2019/03/25/5c98970e4d1a2.jpg">
 <meta property="og:image" content="https://i.loli.net/2019/03/25/5c98971be5df7.jpg">
-<meta property="og:updated_time" content="2019-03-25T08:53:52.620Z">
+<meta property="og:updated_time" content="2019-03-25T12:04:23.644Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Top-K 问题">
-<meta name="twitter:description" content="从 n 个数中找出最大的 k 个数    全局排序最容易的方法，全部排序，取出最大的 k 个。时间复杂度取决于具体使用的排序算法。问题出在当数据数量特别大的时候，花费了很多时间在不需要的元素的排序上。 局部排序不再全局排序，纸堆最大的 k 个排序。相当于冒泡排序或者是选择排序，不断选择最大值放到前面。时间复杂度是 O(n * k)但是我们要注意，top-k 问题中的这 k 个最大元素是不需要有">
+<meta name="twitter:description" content="从 n 个数中找出最大的 k 个数    全局排序最容易的方法，全部排序，取出最大的 k 个。时间复杂度取决于具体使用的排序算法。问题出在当数据数量特别大的时候，花费了很多时间在不需要的元素的排序上。 局部排序不再全局排序，只对最大的 k 个排序。相当于冒泡排序或者是选择排序，不断选择最大值放到前面。时间复杂度是 O(n * k)但是我们要注意，top-k 问题中的这 k 个最大元素是不需要有">
 <meta name="twitter:image" content="https://i.loli.net/2019/03/25/5c98970e4d1a2.jpg">
 
 
@@ -423,9 +423,9 @@
 <p>从 n 个数中找出最大的 k 个数  </p>
 </blockquote>
 <h2 id="全局排序"><a href="#全局排序" class="headerlink" title="全局排序"></a>全局排序</h2><p>最容易的方法，全部排序，取出最大的 k 个。<br>时间复杂度取决于具体使用的排序算法。<br>问题出在当数据数量特别大的时候，花费了很多时间在不需要的元素的排序上。</p>
-<h2 id="局部排序"><a href="#局部排序" class="headerlink" title="局部排序"></a>局部排序</h2><p>不再全局排序，纸堆最大的 k 个排序。<br>相当于冒泡排序或者是选择排序，不断选择最大值放到前面。<br>时间复杂度是 O(n * k)<br>但是我们要注意，top-k 问题中的这 k 个最大元素是不需要有序的，因此我们可以进一步减少操作。</p>
+<h2 id="局部排序"><a href="#局部排序" class="headerlink" title="局部排序"></a>局部排序</h2><p>不再全局排序，只对最大的 k 个排序。<br>相当于冒泡排序或者是选择排序，不断选择最大值放到前面。<br>时间复杂度是 O(n * k)<br>但是我们要注意，top-k 问题中的这 k 个最大元素是不需要有序的，因此我们可以进一步减少操作。</p>
 <h2 id="堆"><a href="#堆" class="headerlink" title="堆"></a>堆</h2><p>先用前 k 个元素生成一个小顶堆，用于存储当前扫描过的数据中最大的 k 个元素。<br>之后从第 k+1 个元素开始扫描，如果有元素大于当前堆顶的元素，那么淘汰当前堆顶元素，替换为新元素，同时调整堆的平衡。<br>最后剩下的 k 个元素组成的堆，就是 top-k 。<br>假设每次堆都发生了调整，那么时间复杂度为 O(n * lg(k) )<br>堆是解决 top-k 的经典算法，接下来要开始更秀的操作了🤒</p>
-<h2 id="随机选择"><a href="#随机选择" class="headerlink" title="随机选择"></a>随机选择</h2><p>随机选择算在是《算法导论》中一个经典的算法，其时间复杂度为O(n)，是一个线性复杂度的方法。<br>利用快排来寻找 top-k ，找到数组中第 k 大的元素，此时数组中该元素左边的元素即是 top-k。</p>
+<h2 id="随机选择"><a href="#随机选择" class="headerlink" title="随机选择"></a>随机选择</h2><p>随机选择算法是《算法导论》中一个经典的算法，其时间复杂度为O(n)，是一个线性复杂度的方法。<br>利用快排来寻找 top-k ，找到数组中第 k 大的元素，此时数组中该元素左边的元素即是 top-k。</p>
 <p>快速排序<strong>第一次</strong>partition，划分之后：<br>i = partition(arr, 1, n);</p>
 <ul>
 <li><p>如果i大于k，则说明arr[i]左边的元素都大于k，于是只递归arr[1, i-1]里第k大的元素即可；</p>
