@@ -79,20 +79,26 @@
 
 
 
-<meta name="description" content="基础知识RAILChrome 团队提出了一个以用户为中心的性能模型被称为 RAIL。RAIL 将影响性能的行为划分为四个方面，分别是: Response, Animation, Idle, Load。  响应流畅的网页对于用户的输入操作的反应时间不应超过 100ms。 动画现如今大多数设备的屏幕刷新频率是60Hz，也就是每秒钟屏幕刷新60次；因此网页动画的运行速度只要达到60FPS，我们就会觉得动">
+<meta name="description" content="基础知识RAILChrome 团队提出了一个以用户为中心的性能模型被称为 RAIL。RAIL 将影响性能的行为划分为四个方面，分别是: Response, Animation, Idle, Load。  响应流畅的网页对于用户的输入操作的反应时间不应超过 100ms。 动画现如今大多数设备的屏幕刷新频率是60Hz，也就是每秒钟屏幕刷新60次；因此网页动画的运行速度只要达到60FPS，我们就会觉得">
 <meta name="keywords" content="front_end">
 <meta property="og:type" content="article">
 <meta property="og:title" content="如何拿下前端面试（性能篇）">
 <meta property="og:url" content="https://xkeith.space/2019/03/30/arc-12/index.html">
 <meta property="og:site_name" content="旧港">
-<meta property="og:description" content="基础知识RAILChrome 团队提出了一个以用户为中心的性能模型被称为 RAIL。RAIL 将影响性能的行为划分为四个方面，分别是: Response, Animation, Idle, Load。  响应流畅的网页对于用户的输入操作的反应时间不应超过 100ms。 动画现如今大多数设备的屏幕刷新频率是60Hz，也就是每秒钟屏幕刷新60次；因此网页动画的运行速度只要达到60FPS，我们就会觉得动">
+<meta property="og:description" content="基础知识RAILChrome 团队提出了一个以用户为中心的性能模型被称为 RAIL。RAIL 将影响性能的行为划分为四个方面，分别是: Response, Animation, Idle, Load。  响应流畅的网页对于用户的输入操作的反应时间不应超过 100ms。 动画现如今大多数设备的屏幕刷新频率是60Hz，也就是每秒钟屏幕刷新60次；因此网页动画的运行速度只要达到60FPS，我们就会觉得">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="https://i.loli.net/2019/03/30/5c9f8e11d0d63.png">
 <meta property="og:image" content="https://i.loli.net/2019/03/30/5c9f8e1d55a5c.png">
-<meta property="og:updated_time" content="2019-03-30T15:41:21.248Z">
+<meta property="og:image" content="https://i.loli.net/2019/03/31/5ca08055488f6.png">
+<meta property="og:image" content="https://i.loli.net/2019/03/31/5ca0805d5ad24.png">
+<meta property="og:image" content="https://i.loli.net/2019/03/31/5ca0806c5d89f.png">
+<meta property="og:image" content="https://i.loli.net/2019/03/31/5ca080735f5b4.png">
+<meta property="og:image" content="https://xkeith.space/2019/03/30/arc-12/%E5%A6%82%E4%BD%95%E6%8B%BF%E4%B8%8B%E5%89%8D%E7%AB%AF%E9%9D%A2%E8%AF%95%EF%BC%88%E6%80%A7%E8%83%BD%E7%AF%87%EF%BC%89/F3E5FCB8-0BB6-4FFD-8219-F80B6BE571EB.png">
+<meta property="og:image" content="https://xkeith.space/2019/03/30/arc-12/%E5%A6%82%E4%BD%95%E6%8B%BF%E4%B8%8B%E5%89%8D%E7%AB%AF%E9%9D%A2%E8%AF%95%EF%BC%88%E6%80%A7%E8%83%BD%E7%AF%87%EF%BC%89/8BBFED09-80D6-4A30-A0CE-F96D7F7EE51A.png">
+<meta property="og:updated_time" content="2019-03-31T08:56:29.181Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="如何拿下前端面试（性能篇）">
-<meta name="twitter:description" content="基础知识RAILChrome 团队提出了一个以用户为中心的性能模型被称为 RAIL。RAIL 将影响性能的行为划分为四个方面，分别是: Response, Animation, Idle, Load。  响应流畅的网页对于用户的输入操作的反应时间不应超过 100ms。 动画现如今大多数设备的屏幕刷新频率是60Hz，也就是每秒钟屏幕刷新60次；因此网页动画的运行速度只要达到60FPS，我们就会觉得动">
+<meta name="twitter:description" content="基础知识RAILChrome 团队提出了一个以用户为中心的性能模型被称为 RAIL。RAIL 将影响性能的行为划分为四个方面，分别是: Response, Animation, Idle, Load。  响应流畅的网页对于用户的输入操作的反应时间不应超过 100ms。 动画现如今大多数设备的屏幕刷新频率是60Hz，也就是每秒钟屏幕刷新60次；因此网页动画的运行速度只要达到60FPS，我们就会觉得">
 <meta name="twitter:image" content="https://i.loli.net/2019/03/30/5c9f8e11d0d63.png">
 
 
@@ -381,7 +387,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  626
+                  5.7k
                 </span>
               
 
@@ -397,7 +403,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  2
+                  20
                 </span>
               
             </div>
@@ -418,17 +424,143 @@
       
 
       
-        <h2 id="基础知识"><a href="#基础知识" class="headerlink" title="基础知识"></a>基础知识</h2><h3 id="RAIL"><a href="#RAIL" class="headerlink" title="RAIL"></a>RAIL</h3><p>Chrome 团队提出了一个以用户为中心的性能模型被称为 RAIL。<br>RAIL 将影响性能的行为划分为四个方面，分别是: Response, Animation, Idle, Load。</p>
+        <hr>
+<h2 id="基础知识"><a href="#基础知识" class="headerlink" title="基础知识"></a>基础知识</h2><h3 id="RAIL"><a href="#RAIL" class="headerlink" title="RAIL"></a>RAIL</h3><p>Chrome 团队提出了一个以用户为中心的性能模型被称为 RAIL。<br>RAIL 将影响性能的行为划分为四个方面，分别是: Response, Animation, Idle, Load。</p>
 <p><img src="https://i.loli.net/2019/03/30/5c9f8e11d0d63.png" alt="5c9f8e11d0d63.png"></p>
 <h4 id="响应"><a href="#响应" class="headerlink" title="响应"></a>响应</h4><p>流畅的网页对于用户的输入操作的反应时间不应超过 <strong>100ms</strong>。</p>
 <h4 id="动画"><a href="#动画" class="headerlink" title="动画"></a>动画</h4><p>现如今大多数设备的屏幕刷新频率是60Hz，也就是每秒钟屏幕刷新60次；因此网页动画的运行速度只要达到60FPS，我们就会觉得动画很流畅。<br>换算下来每一帧的时间是 16ms<br><code>(1 秒 = 1000 毫秒) / 60 帧 = 16.66 毫秒/帧</code></p>
-<p>但通常浏览器需要花费一些时间将每一帧的内容绘制到屏幕上（包括样式计算、布局、绘制、合成等工作），所以通常我们只有10毫秒来执行JS代码。</p>
+<p>但通常浏览器需要花费一些时间将每一帧的内容绘制到屏幕上（包括样式计算、布局、绘制、合成等工作），所以通常我们只有10毫秒来执行JS代码。<br>一个解决办法是使用Web Worker，主线程只用于UI渲染，然后跟UI渲染不相干的任务，都放在Worker线程。</p>
 <h4 id="空闲"><a href="#空闲" class="headerlink" title="空闲"></a>空闲</h4><p>为了更好的性能，我们通常会充分利用浏览器空闲周期做一些低优先级的事情。例如：在空闲周期预请求一些接下来可能会用到的数据或上报分析数据等。</p>
 <p>RAIL规定，空闲周期内运行的任务不得超过<strong>50ms</strong>，当然不止RAIL规定，W3C性能工作组的Longtasks标准也规定了超过50毫秒的任务属于长任务，那么<strong>50ms</strong>这个数字是怎么得来的呢？<br>浏览器是单线程的，这意味着同一时间主线程只能处理一个任务，如果一个任务执行时间过长，浏览器则无法执行其他任务，用户会感觉到浏览器被卡死了，因为他的输入得不到任何响应。<br>为了达到<strong>100ms</strong>内给出响应，将空闲周期执行的任务限制为<strong>50ms</strong>意味着，即使用户的输入行为发生在空闲任务刚开始执行，浏览器仍有剩余的50ms时间用来响应用户输入，而不会产生用户可察觉的延迟。</p>
 <p><img src="https://i.loli.net/2019/03/30/5c9f8e1d55a5c.png" alt="5c9f8e1d55a5c.png"></p>
-<h3 id="加载"><a href="#加载" class="headerlink" title="加载"></a>加载</h3><p>如果不能在<strong>1秒钟</strong>内加载网页并让用户看到内容，用户的注意力就会分散。用户会觉得他要做的事情被打断，如果<strong>10秒钟</strong>还打不开网页，用户会感到失望，会放弃他们想做的事，以后他们或许都不会再回来。</p>
-<h2 id="常见性能漏洞"><a href="#常见性能漏洞" class="headerlink" title="常见性能漏洞"></a>常见性能漏洞</h2><h2 id="常用优化方法"><a href="#常用优化方法" class="headerlink" title="常用优化方法"></a>常用优化方法</h2><h3 id="CSS-优化"><a href="#CSS-优化" class="headerlink" title="CSS 优化"></a>CSS 优化</h3><h3 id="JavaScript-优化"><a href="#JavaScript-优化" class="headerlink" title="JavaScript 优化"></a>JavaScript 优化</h3><h3 id="Vue-优化"><a href="#Vue-优化" class="headerlink" title="Vue 优化"></a>Vue 优化</h3><h3 id="网络优化"><a href="#网络优化" class="headerlink" title="网络优化"></a>网络优化</h3><h2 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h2><p><a href="https://juejin.im/post/5c874d9ce51d4574bd6ad8ca" target="_blank" rel="noopener">让你的网页更丝滑（一） - 掘金</a></p>
-
+<h4 id="加载"><a href="#加载" class="headerlink" title="加载"></a>加载</h4><p>如果不能在<strong>1秒钟</strong>内加载网页并让用户看到内容，用户的注意力就会分散。用户会觉得他要做的事情被打断，如果<strong>10秒钟</strong>还打不开网页，用户会感到失望，会放弃他们想做的事，以后他们或许都不会再回来。</p>
+<h3 id="网页生成的过程"><a href="#网页生成的过程" class="headerlink" title="网页生成的过程"></a>网页生成的过程</h3><p><img src="https://i.loli.net/2019/03/31/5ca08055488f6.png" alt="5ca08055488f6.png"></p>
+<p>网页的生成过程，大致可以分成五步。</p>
+<ol>
+<li>HTML 代码转化成 DOM。</li>
+<li>CSS 代码转化成 CSSOM (CSS Object Model)。</li>
+<li>结合 DOM 和 CSSOM，生成一颗渲染树。</li>
+<li>生成布局，将渲染树的所有节点进行平面合成。</li>
+<li>将布局绘制在屏幕上。</li>
+</ol>
+<p>五步中，一到三步都非常快，耗时的是第四步和第五步。<br><strong>生成布局（flow）和绘制（paint）这两步，合称为渲染（render）。</strong></p>
+<p><img src="https://i.loli.net/2019/03/31/5ca0805d5ad24.png" alt="5ca0805d5ad24.png"></p>
+<h3 id="重排和重绘"><a href="#重排和重绘" class="headerlink" title="重排和重绘"></a>重排和重绘</h3><p><strong>网页生成的时候，至少会渲染一次。用户访问的过程中，还会不断重新渲染。</strong><br>以下三种情况，会导致网页重新渲染。</p>
+<ul>
+<li>修改DOM</li>
+<li>修改样式表</li>
+<li>用户事件（比如鼠标悬停、页面滚动、输入框键入文字、改变窗口大小等等）</li>
+</ul>
+<p><strong>重新渲染，就需要重新生成布局和重新绘制。前者叫做”重排”（reflow），后者叫做”重绘”（repaint）。</strong><br>需要注意的是，<strong>”重绘”不一定需要”重排”</strong>，比如改变某个网页元素的颜色，就只会触发”重绘”，不会触发”重排”，因为布局没有改变。但是，<strong>”重排”必然导致”重绘”</strong>，比如改变一个网页元素的位置，就会同时触发”重排”和”重绘”，因为布局改变了。</p>
+<p>触发重排的属性：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">1.盒子模型相关属性： width ,height ,padding ,margin ,display ,border-width ,border</span><br><span class="line"></span><br><span class="line">2.定位属性及浮动： top ,bottom ,left ,right ,position ,float ,clear</span><br><span class="line"></span><br><span class="line">3.改变节点内部文字结构：</span><br><span class="line"></span><br><span class="line">text-align, overflow-y ,font-weight ,overflow, </span><br><span class="line">font-family, line-height, vertival-align ,white-space,font-size</span><br></pre></td></tr></table></figure></p>
+<p>触发重绘的属性：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">color,border-style,border-radius ,visibility,text-decoration ,</span><br><span class="line">background ,background-image ,background-position ,background-repeat,</span><br><span class="line">background-size ,outline-color ,outline ,outline-style ,outline-width ,box-shadow</span><br></pre></td></tr></table></figure></p>
+<h2 id="常见性能漏洞"><a href="#常见性能漏洞" class="headerlink" title="常见性能漏洞"></a>常见性能漏洞</h2><h3 id="避免重绘"><a href="#避免重绘" class="headerlink" title="避免重绘"></a>避免重绘</h3><p>重排和重绘会不断触发，这是不可避免的。但是，它们非常耗费资源，是导致网页性能低下的根本原因。<br><strong>提高网页性能，就是要降低”重排”和”重绘”的频率和成本，尽量少触发重新渲染。</strong><br>前面提到，DOM变动和样式变动，都会触发重新渲染。但是，浏览器已经很智能了，会尽量把所有的变动集中在一起，排成一个队列，然后一次性执行，尽量避免多次重新渲染。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">div.style.color = <span class="string">'blue'</span>;</span><br><span class="line">div.style.marginTop = <span class="string">'30px'</span>;</span><br></pre></td></tr></table></figure>
+<p>上面代码中，div元素有两个样式变动，但是浏览器只会触发一次重排和重绘。<br>如果写得不好，就会触发两次重排和重绘。这种情况也被称为 FSL <em>Forced Synchronous Layouts</em> 强制同步布局。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">div.style.color = <span class="string">'blue'</span>;</span><br><span class="line"><span class="keyword">var</span> margin = <span class="built_in">parseInt</span>(div.style.marginTop);</span><br><span class="line">div.style.marginTop = (margin + <span class="number">10</span>) + <span class="string">'px'</span>;</span><br></pre></td></tr></table></figure>
+<p>上面代码对div元素设置背景色以后，第二行要求浏览器给出该元素的位置，所以浏览器不得不立即重排。<br>一般来说，样式的写操作之后，如果有下面这些属性的读操作，都会引发浏览器立即重新渲染。</p>
+<ul>
+<li>offsetTop/offsetLeft/offsetWidth/offsetHeight</li>
+<li>scrollTop/scrollLeft/scrollWidth/scrollHeight</li>
+<li>clientTop/clientLeft/clientWidth/clientHeight</li>
+<li>getComputedStyle()</li>
+</ul>
+<p>所以，从性能角度考虑，尽量不要把读操作和写操作，放在一个语句里面。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// bad</span></span><br><span class="line">div.style.left = div.offsetLeft + <span class="number">10</span> + <span class="string">"px"</span>;</span><br><span class="line">div.style.top = div.offsetTop + <span class="number">10</span> + <span class="string">"px"</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">// good</span></span><br><span class="line"><span class="keyword">var</span> left = div.offsetLeft;</span><br><span class="line"><span class="keyword">var</span> top  = div.offsetTop;</span><br><span class="line">div.style.left = left + <span class="number">10</span> + <span class="string">"px"</span>;</span><br><span class="line">div.style.top = top + <span class="number">10</span> + <span class="string">"px"</span>;</span><br></pre></td></tr></table></figure>
+<p>一般的规则是：</p>
+<ul>
+<li>样式表越简单，重排和重绘就越快。</li>
+<li>重排和重绘的DOM元素层级越高，成本就越高。</li>
+<li>table元素的重排和重绘成本，要高于div元素</li>
+</ul>
+<h2 id="常用优化方法"><a href="#常用优化方法" class="headerlink" title="常用优化方法"></a>常用优化方法</h2><h3 id="浏览器优化"><a href="#浏览器优化" class="headerlink" title="浏览器优化"></a>浏览器优化</h3><h4 id="图片优化"><a href="#图片优化" class="headerlink" title="图片优化"></a>图片优化</h4><p><strong>图片格式选择</strong>：<br>1.jpg图片</p>
+<p>特点是有损压缩、高质量压缩、体积小、加载快、不支持透明，适用于呈现色彩丰富的图片，适合用作背景图、轮播图或Banner图的格式</p>
+<p>2.png图片</p>
+<p>特点是无损压缩、高质量压缩、体积大、支持透明，适用于呈现小的Logo，或者颜色简单且对比强烈的图片或背景图的格式</p>
+<p>3.SVG图片</p>
+<p>特点是体积小，不失真，兼容性好，可压缩性强，可编程，渲染成本高，学习成本高，最适合带有大型渲染区域的应用程序（地图应用）</p>
+<p><strong>4.雪碧图</strong></p>
+<p>将一个页面涉及到的所有图片都包含到一张大图中去，然后利用CSS的 background-image，background- repeat，background-position 的组合进行背景定位。利用CSS Sprites能很好地减少网页的http请求，从而大大的提高页面的性能；CSS Sprites能减少图片的字节。</p>
+<p>5.Base64</p>
+<p>对图片进行Base64编码，会得到一串字符串，浏览器会直接将这串字符串解码为图片，这样就不用发送http请求了，但是这样的缺点是图片会膨胀，体积会增加，所以它的应用条件是：图片尺寸小、无法用雪碧图、图片更新频率低（不需要我们重复编码和修改文件内容，维护成本较低）</p>
+<p><strong>6.webP</strong></p>
+<p>集各种格式的优点于一身，缺点就是<strong>兼容性</strong>不好，所以应用时需要判断浏览器</p>
+<p><strong>图片懒加载</strong>，就是当图片出现在浏览器的可视区域内时，设置图片真正的路径，让图片显示出来。当一个页面中由许多图片时，使用懒加载，可大大提高页面性能。</p>
+<p>具体完成过程为，先给图片一个假的src,不让图片加载，通过监听滚动时间+函数节流，来完成判断元素距离可视区域顶部的高度，要是高度差&gt;=0，那么就将正确的src赋给图片，图片完成加载。</p>
+<h4 id="缓存优化"><a href="#缓存优化" class="headerlink" title="缓存优化"></a>缓存优化</h4><h5 id="浏览器缓存机制"><a href="#浏览器缓存机制" class="headerlink" title="浏览器缓存机制"></a>浏览器缓存机制</h5><p>1.MemoryCache，即在内存中的缓存，从优先级上来说，它是浏览器最先尝试去命中的一种缓存。从效率上来说，它是响应速度最快的一种缓存。</p>
+<p>2.Services Worker Cache，Service Worker 是一种独立于主线程之外的 Javascript 线程。它脱离于浏览器窗体，因此无法直接访问 DOM。这样独立的个性使得 Service Worker 的“个人行为”无法干扰页面的性能，可利用这一点帮我们实现离线缓存、消息推送和网络代理等功能</p>
+<p>3.Http缓存，分为强缓存和协商缓存</p>
+<p>http缓存的是指:当Web请求抵达缓存时， 如果本地有“已缓存的”副本，就可以从本地存储设备而不是从原始服务器中提取这个文档</p>
+<p>强缓存（优先于协商缓存，返回码200）：</p>
+<p>利用Expires（http1.0，记录缓存过期时间）和Cache-Control（http1.1，记录缓存过期时间）来控制，Cache-Control优先级高于Expires，Expires 使用的是服务器端的时间，要是客户端时间和服务端不同步，就可能造成浏览器本地的缓存无用或者一直无法过期，Cache-Control使用的是使用的是客户端本地时间的计算，所以不会出现上述情况，Cache-Control优先级高于Expires，</p>
+<p>协商缓存（返回码304）：</p>
+<p>利用If-None-Match（请求头）/Etag（响应头）和If-Modified-Since（请求头）/Last-Modified（响应头），If-None-Match和Etag记录的是服务器为每个资源生成的唯一的标识字符串，缓存的数据要是改变了，那么这两个数据就会变，这样可判断缓存到底有没有更新，If-Modified-Since和Last-Modified记录的是服务端的文件最后改变的时间，通过判断这个，可以缓存有没有被更新，Last-Modified有一个缺陷就是只能精确到1s，所以对于精确更高的可能不适用，Etag优先级高于Last-Modified，Etag生成过程需要服务器额外付出开销，会影响服务器性能，所以要看情况使用Etag</p>
+<p>4.Push Cache</p>
+<p>http2阶段的缓存，应用尚处于萌芽阶段，是缓存的最后一道防线。</p>
+<p>浏览器只有在 Memory Cache、HTTP Cache 和 Service Worker Cache 均未命中的情况下才会去询问 Push Cache。Push Cache 是一种存在于会话阶段的缓存，当 session 终止时，缓存也随之释放。不同的页面只要共享了同一个 HTTP2 连接，那么它们就可以共享同一个 Push Cache。</p>
+<h5 id="本地存储机制"><a href="#本地存储机制" class="headerlink" title="本地存储机制"></a>本地存储机制</h5><p>1.利用WebStorage</p>
+<p>WebStorage提供了一种方式让网站能够把信息存储到本地的计算机上，并在以后需要的时候进行获取。这样一来，当需要用到什么资源时，可以直接在本地存储里获取，而不用发起网络请求等待响应。WebStorage分为localStorage（只支持string类型的存储）与Session Storage（只支持string类型的存储），Session Storage在会话结束消失， localStorage永久有效，手动删除才会消失，Session Storage 和localStorage都遵循同源策略，但是对Session Storage特殊的一定在于，即便是相同域名下的两个页面，只要它们不在同一个浏览器窗口中打开，那么它们的 Session Storage 内容便无法共享。</p>
+<p>2.利用IndexDB</p>
+<p>IndexDB运行在浏览器上的非关系型数据库，突破了WebStorage的存储大小限制，支持存储字符串和二进制数据，IndexDB可创建数据库和表，可以被当成一个真正的数据库使用。</p>
+<h3 id="CSS-优化"><a href="#CSS-优化" class="headerlink" title="CSS 优化"></a>CSS 优化</h3><h4 id="选择器"><a href="#选择器" class="headerlink" title="选择器"></a>选择器</h4><p>css是从右往左进行解析的，这也就是说 (ul&gt;li)这种写法，浏览器是先去找到li，再去看每个li的父元素是不是ul,当使用层级较多的选择器时（如：body&gt;div&gt;p&gt;span），会加大浏览器的寻找时间，而我们的原则因当是使浏览器能够尽快的找到相应的元素。所以css选择器方面的优化方案为：</p>
+<ul>
+<li>避免后代选择符(后代选择器的开销很高)</li>
+<li>避免链式选择符，避免使用复杂的选择器，层级越少越好</li>
+<li>避免使用通配符（使用通配符会使浏览器找遍所有的元素）</li>
+<li>少用标签选择器，尽量用类选择器代替</li>
+<li>避免不必要的重复</li>
+</ul>
+<h4 id="减少-CSS-阻塞"><a href="#减少-CSS-阻塞" class="headerlink" title="减少 CSS 阻塞"></a>减少 CSS 阻塞</h4><p>当我们在html时，总是在解析到link标签或style标签时，CSSDOM才会开始构建，这个构建过程会导致DOM解析的阻塞，所以为了减少阻塞时间，我们需要尽快完成加载（启用CDN），尽早完成加载（在head元素中引用css相关标签）</p>
+<h3 id="JavaScript-优化"><a href="#JavaScript-优化" class="headerlink" title="JavaScript 优化"></a>JavaScript 优化</h3><h4 id="window-requestAnimationFrame"><a href="#window-requestAnimationFrame" class="headerlink" title="window.requestAnimationFrame()"></a>window.requestAnimationFrame()</h4><p>即便你能保证每一帧的总耗时都小于16ms，也无法保证一定不会出现丢帧的情况，这取决于触发JS执行的方式。<br>假设使用 <code>setTimeout</code> 或 <code>setInterval</code> 来触发JS执行并修改样式从而导致视觉变化；那么会有这样一种情况，因为<code>setTimeout</code> 或 <code>setInterval</code>没有办法保证回调函数什么时候执行，它可能在每一帧的中间执行，也可能在每一帧的最后执行。所以会导致即便我们能保障每一帧的总耗时小于<strong>16ms</strong>，但是执行的时机如果在每一帧的中间或最后，最后的结果依然是没有办法每隔16ms让屏幕产生一次变化。</p>
+<p><img src="https://i.loli.net/2019/03/31/5ca0806c5d89f.png" alt="5ca0806c5d89f.png"></p>
+<p>即便我们能保证每一帧总体时间小于<strong>16ms</strong>，但如果使用定时器触发动画，那么由于定时器的触发时机不确定，所以还是会导致动画丢帧。现在整个Web只有一个API可以解决这个问题，那就是requestAnimationFrame，它可以<strong>保证回调函数稳定的在每一帧最开始触发</strong>。</p>
+<p><img src="https://i.loli.net/2019/03/31/5ca080735f5b4.png" alt="5ca080735f5b4.png"></p>
+<p>应用了 RAF 的网页动画例子：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> rAF = <span class="built_in">window</span>.requestAnimationFrame;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> degrees = <span class="number">0</span>;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">update</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  div.style.transform = <span class="string">"rotate("</span> + degrees + <span class="string">"deg)"</span>;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">'updated to degrees '</span> + degrees);</span><br><span class="line">  degrees = degrees + <span class="number">1</span>;</span><br><span class="line">  rAF(update);</span><br><span class="line">&#125;</span><br><span class="line">rAF(update);</span><br></pre></td></tr></table></figure>
+<h4 id="window-requestIdleCallback"><a href="#window-requestIdleCallback" class="headerlink" title="window.requestIdleCallback()"></a>window.requestIdleCallback()</h4><p>还有一个函数 <a href="https://w3c.github.io/requestidlecallback/" target="_blank" rel="noopener">window.requestIdleCallback()</a> ，也可以用来调节重新渲染。<br>它指定只有当一帧的末尾有空闲时间，才会执行回调函数。</p>
+<h4 id="减少JS阻塞"><a href="#减少JS阻塞" class="headerlink" title="减少JS阻塞"></a>减少JS阻塞</h4><p>页面构建dom树的过程，即从上到下解析HTML文档生成DOM节点树，当解析到<code>&lt;script&gt;</code>标签时，会解析其中的脚本（对于外链的JavaScript文件，需要先加载该文件内容），然后立即执行，这整个过程都会阻塞文档解析，直到脚本执行完才会继续解析文档。如果js文件的数量和内容都比较大，那么就会造成页面空白，所以为了避免这一状况，应该把 <code>&lt;script&gt;</code>标签放在<code>&lt;/body&gt;</code>标签前面，而不是放在<code>&lt;head&gt;</code>标签里,要使用async(异步加载，脚本加载完立刻执行)和defer(异步加载，文档解析完执行)</p>
+<h4 id="在异步任务中实现-DOM-修改时，把它包装成-micro-任务-微任务）"><a href="#在异步任务中实现-DOM-修改时，把它包装成-micro-任务-微任务）" class="headerlink" title="在异步任务中实现 DOM 修改时，把它包装成 micro 任务(微任务）"></a>在异步任务中实现 DOM 修改时，把它包装成 micro 任务(微任务）</h4><p>事件循环一般是这样，先处理Macro-task（宏任务）,再处理micro 任务，micro 任务处理完后面紧跟着就是渲染的步骤，然后更新界面，处理Web work任务。包装成 micro 任务，这样不用等新的一轮事件循环，直接渲染呈现</p>
+<h4 id="Dom方面（从减少页面回流方面来考虑）"><a href="#Dom方面（从减少页面回流方面来考虑）" class="headerlink" title="Dom方面（从减少页面回流方面来考虑）"></a>Dom方面（从减少页面回流方面来考虑）</h4><p>减少Dom操作，缓存dom变量<br><code>var a=document.querySelector(&quot;#demo&quot;);</code></p>
+<p>避免循环更改dom，在更改时创建一个documentFragment或div，在它上面应用所有DOM操作，最后再把它添加到相应dom中</p>
+<p>在脚本中 document.images、document.forms 、getElementsByTagName()返回的都是 HTMLCollection类型的集合，在平时使用的时候大多将它作为数组来使用，因为它有 length属性，也可以使用索引访问每一个元素。不过在访问性能上则比<strong>数组要差很多</strong>，原因是这个集合并不是一个<strong>静态</strong>的结果，它表示的仅仅是一个特定的查询，每次访问该集合时都会<strong>重新执行</strong>这个查询从而更新查询结果。所谓的 “访问集合” 包括读取集合的 length属性、访问集合中的元素。<br>　　因此，当你需要遍历 HTML Collection的时候，<strong>尽量将它转为数组后再访问</strong>，以提高性能。即使不转换为数组，也请尽可能少的访问它，例如在遍历的时候可以将 length属性、成员保存到局部变量后再使用局部变量。</p>
+<h4 id="代码方面"><a href="#代码方面" class="headerlink" title="代码方面"></a>代码方面</h4><p><strong>慎用 with</strong><br>with 在蝴蝶书里面就被明确的视为禁术，他会延长当前对象的作用域链，使得查找作用域的性能大大降低，请不要因为懒得写几行代码就直接使用 with 。可是使用局部变量来代替 with。</p>
+<p><strong>避免使用 eval 和 Function</strong><br>每次 eval 或 Function 构造函数作用于字符串表示的源代码时，脚本引擎都需要将源代码转换成可执行代码。这是很消耗资源的操作 —— 通常比简单的函数调用慢 <strong>100倍以上。</strong><br>eval 函数效率特别低，由于事先无法知晓传给 eval 的字符串中的内容，eval在其上下文中解释要处理的代码，也就是说编译器无法优化上下文，因此只能有浏览器在运行时解释代码。这对性能影响很大。<br>Function 构造函数比 eval略好，因为使用此代码不会影响周围代码 ;但其速度仍很慢。<br>此外，使用 eval和 Function也不利于Javascript 压缩工具执行压缩。</p>
+<h3 id="Vue-优化"><a href="#Vue-优化" class="headerlink" title="Vue 优化"></a>Vue 优化</h3><h4 id="使用v-if代替v-show"><a href="#使用v-if代替v-show" class="headerlink" title="使用v-if代替v-show"></a>使用v-if代替v-show</h4><p>两者的区别是：v-if不渲染DOM，v-show会预渲染DOM<br>除以下情况使用v-show，其他情况尽量使用v-if</p>
+<ul>
+<li>有预渲染需求</li>
+<li>需要频繁切换显示状态</li>
+</ul>
+<h4 id="v-for必须加上key，并避免同时使用v-if"><a href="#v-for必须加上key，并避免同时使用v-if" class="headerlink" title="v-for必须加上key，并避免同时使用v-if"></a>v-for必须加上key，并避免同时使用v-if</h4><p>一般我们在两种常见的情况下会倾向于这样做:</p>
+<ul>
+<li>为了过滤一个列表中的项目<br>比如<code>v-for=“user in users” v-if=“user.isActive”</code>。在这种情形下，请将users替换为一个<strong>计算属性</strong> (比如activeUsers)，让其返回过滤后的列表</li>
+<li>为了避免渲染本应该被隐藏的列表<br>比如<code>v-for=“user in users” v-if=“shouldShowUsers”</code>。这种情形下，请将v-if移动至容器元素上 (比如ul,ol)</li>
+</ul>
+<h4 id="事件及时销毁"><a href="#事件及时销毁" class="headerlink" title="事件及时销毁"></a>事件及时销毁</h4><p>Vue组件销毁时，会自动清理它与其它实例的连接，解绑它的全部指令及事件监听器，但是仅限于组件本身的事件。<br>也就是说，在js内使用addEventListener等方式是不会自动销毁的，我们需要在组件销毁时手动移除这些事件的监听，以免造成内存泄露，如：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">created() &#123;</span><br><span class="line">  addEventListener(<span class="string">'touchmove'</span>, <span class="keyword">this</span>.touchmove, <span class="literal">false</span>)</span><br><span class="line">&#125;,</span><br><span class="line">beforeDestroy() &#123;</span><br><span class="line">  removeEventListener(<span class="string">'touchmove'</span>, <span class="keyword">this</span>.touchmove, <span class="literal">false</span>)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="资源提前请求"><a href="#资源提前请求" class="headerlink" title="资源提前请求"></a>资源提前请求</h4><p>经测试，Vue项目中各文件的加载顺序为：router.js、main.js、App.vue、[page].vue、[component].vue，如图：<br>            <img src="%E5%A6%82%E4%BD%95%E6%8B%BF%E4%B8%8B%E5%89%8D%E7%AB%AF%E9%9D%A2%E8%AF%95%EF%BC%88%E6%80%A7%E8%83%BD%E7%AF%87%EF%BC%89/F3E5FCB8-0BB6-4FFD-8219-F80B6BE571EB.png" alt></p>
+<p>其中，router的加载时间相比于page.vue快近100ms，如果page.vue的文件较多，时间差异会更大。 所以，可以在页面挂载、渲染的同时去请求接口数据，如在router.js中请求数据：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> Router <span class="keyword">from</span> <span class="string">'vue-router'</span></span><br><span class="line"><span class="keyword">import</span> store <span class="keyword">from</span> <span class="string">'./store'</span></span><br><span class="line"></span><br><span class="line">store.dispatch(<span class="string">'initAjax'</span>)</span><br></pre></td></tr></table></figure>
+<h4 id="多使用异步组件和插件"><a href="#多使用异步组件和插件" class="headerlink" title="多使用异步组件和插件"></a>多使用异步组件和插件</h4><p>不需要首屏加载的组件都使用异步组件的方式来加载，如多 tab。包括需要触发条件的动作也使用异步组件（如弹窗） 使用方式为：v-if来控制显示时机，引入组件的Promise即可。</p>
+<h3 id="网络优化"><a href="#网络优化" class="headerlink" title="网络优化"></a>网络优化</h3><h4 id="减少网络请求"><a href="#减少网络请求" class="headerlink" title="减少网络请求"></a>减少网络请求</h4><blockquote>
+<p>浏览器对同一时间针对同一域名下的请求有一定数量限制（一般是6个），超过限制数目的请求会被阻塞  </p>
+</blockquote>
+<p>首屏尽可能减少同域名的请求，包括接口和js；按需减少首屏的chunk.js，合并接口请求</p>
+<h4 id="DNS-解析优化"><a href="#DNS-解析优化" class="headerlink" title="DNS 解析优化"></a>DNS 解析优化</h4><p>DNS 缓存 -&gt; 减少 DNS 解析时间<br>keep-alive 减少链接建立次数。</p>
+<h4 id="CDN-和-SSR"><a href="#CDN-和-SSR" class="headerlink" title="CDN 和 SSR"></a>CDN 和 SSR</h4><p>CDN全称是内容分发网络，简单的来说，CDN做的事，就是把资源存在离自己最近的服务器里，从而实现就近访问数据，快速获取到需要的数据</p>
+<p>CDN 往往被用来存放静态资源(像 JS、CSS、图片等不需要业务服务器进行计算即得的资源),可以将静态资源和主页面置于不同的域名下，避免cookie的携带，这样可以做到优化CDN</p>
+<p><img src="%E5%A6%82%E4%BD%95%E6%8B%BF%E4%B8%8B%E5%89%8D%E7%AB%AF%E9%9D%A2%E8%AF%95%EF%BC%88%E6%80%A7%E8%83%BD%E7%AF%87%EF%BC%89/8BBFED09-80D6-4A30-A0CE-F96D7F7EE51A.png" alt></p>
+<p>服务端渲染，就是当用户第一次请求页面时，由服务器把需要的组件或页面渲染成 HTML 字符串，然后把它返回给客户端。客户端拿到手的，是可以直接渲染然后呈现给用户的 HTML 内容。</p>
+<p>没有服务器渲染，当浏览器解析html文档解析到<script>标签时，就需要停下html渲染，去解析其中的脚本并执行，这整个过程都会阻塞文档解析，直到脚本执行完才会继续解析文档进行渲染。如果js文件的数量和内容都比较大，那么就会造成页面空白，这样是非常不利于用户体验的，服务器渲染就能很好的解决这一问题。</p>
+<p>服务端渲染也不是随便就能用的，它加重了服务器的压力，也需要合理使用</p>
+<h2 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h2><p><a href="https://juejin.im/post/5c874d9ce51d4574bd6ad8ca">让你的网页更丝滑（一） - 掘金</a></p>
+<p><a href="http://www.ruanyifeng.com/blog/2015/09/web-page-performance-in-depth.html">网页性能管理详解 - 阮一峰的网络日志</a></p>
+<p><a href="http://www.ruanyifeng.com/blog/2017/09/flame-graph.html">如何读懂火焰图？ - 阮一峰的网络日志</a></p>
+<p><a href="http://www.cnblogs.com/coober/p/8078847.html">前端性能优化方案都有哪些？ - coober - 博客园</a></p>
+<p><a href="https://blog.csdn.net/loisandyu/article/details/83348763">掘金小册前端性能优化原理与实践读后总结 - loisandyu的博客 - CSDN博客</a></p>
+<p><a href="https://blog.csdn.net/coolmeme/article/details/9468743?utm_source=blogxgwz0">一张图说明CDN网络的原理 - coolme的专栏 - CSDN博客</a></p>
+<p><a href="https://juejin.im/post/5c4e6d7951882522c03ea809">从4个方面优化你的Vue项目 - 掘金</a></p>
+<p><a href="https://juejin.im/post/5b9214c2f265da0aeb70e36e">2018你应该知道的Web性能信息采集指南 - 掘金</a></p>
+</script></p>
       
     </div>
     
@@ -642,7 +774,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#基础知识"><span class="nav-number">1.</span> <span class="nav-text">基础知识</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#RAIL"><span class="nav-number">1.1.</span> <span class="nav-text">RAIL</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#响应"><span class="nav-number">1.1.1.</span> <span class="nav-text">响应</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#动画"><span class="nav-number">1.1.2.</span> <span class="nav-text">动画</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#空闲"><span class="nav-number">1.1.3.</span> <span class="nav-text">空闲</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#加载"><span class="nav-number">1.2.</span> <span class="nav-text">加载</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#常见性能漏洞"><span class="nav-number">2.</span> <span class="nav-text">常见性能漏洞</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#常用优化方法"><span class="nav-number">3.</span> <span class="nav-text">常用优化方法</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#CSS-优化"><span class="nav-number">3.1.</span> <span class="nav-text">CSS 优化</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#JavaScript-优化"><span class="nav-number">3.2.</span> <span class="nav-text">JavaScript 优化</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Vue-优化"><span class="nav-number">3.3.</span> <span class="nav-text">Vue 优化</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#网络优化"><span class="nav-number">3.4.</span> <span class="nav-text">网络优化</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Reference"><span class="nav-number">4.</span> <span class="nav-text">Reference</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#基础知识"><span class="nav-number">1.</span> <span class="nav-text">基础知识</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#RAIL"><span class="nav-number">1.1.</span> <span class="nav-text">RAIL</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#响应"><span class="nav-number">1.1.1.</span> <span class="nav-text">响应</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#动画"><span class="nav-number">1.1.2.</span> <span class="nav-text">动画</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#空闲"><span class="nav-number">1.1.3.</span> <span class="nav-text">空闲</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#加载"><span class="nav-number">1.1.4.</span> <span class="nav-text">加载</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#网页生成的过程"><span class="nav-number">1.2.</span> <span class="nav-text">网页生成的过程</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#重排和重绘"><span class="nav-number">1.3.</span> <span class="nav-text">重排和重绘</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#常见性能漏洞"><span class="nav-number">2.</span> <span class="nav-text">常见性能漏洞</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#避免重绘"><span class="nav-number">2.1.</span> <span class="nav-text">避免重绘</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#常用优化方法"><span class="nav-number">3.</span> <span class="nav-text">常用优化方法</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#浏览器优化"><span class="nav-number">3.1.</span> <span class="nav-text">浏览器优化</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#图片优化"><span class="nav-number">3.1.1.</span> <span class="nav-text">图片优化</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#缓存优化"><span class="nav-number">3.1.2.</span> <span class="nav-text">缓存优化</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#浏览器缓存机制"><span class="nav-number">3.1.2.1.</span> <span class="nav-text">浏览器缓存机制</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#本地存储机制"><span class="nav-number">3.1.2.2.</span> <span class="nav-text">本地存储机制</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#CSS-优化"><span class="nav-number">3.2.</span> <span class="nav-text">CSS 优化</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#选择器"><span class="nav-number">3.2.1.</span> <span class="nav-text">选择器</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#减少-CSS-阻塞"><span class="nav-number">3.2.2.</span> <span class="nav-text">减少 CSS 阻塞</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#JavaScript-优化"><span class="nav-number">3.3.</span> <span class="nav-text">JavaScript 优化</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#window-requestAnimationFrame"><span class="nav-number">3.3.1.</span> <span class="nav-text">window.requestAnimationFrame()</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#window-requestIdleCallback"><span class="nav-number">3.3.2.</span> <span class="nav-text">window.requestIdleCallback()</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#减少JS阻塞"><span class="nav-number">3.3.3.</span> <span class="nav-text">减少JS阻塞</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#在异步任务中实现-DOM-修改时，把它包装成-micro-任务-微任务）"><span class="nav-number">3.3.4.</span> <span class="nav-text">在异步任务中实现 DOM 修改时，把它包装成 micro 任务(微任务）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Dom方面（从减少页面回流方面来考虑）"><span class="nav-number">3.3.5.</span> <span class="nav-text">Dom方面（从减少页面回流方面来考虑）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#代码方面"><span class="nav-number">3.3.6.</span> <span class="nav-text">代码方面</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Vue-优化"><span class="nav-number">3.4.</span> <span class="nav-text">Vue 优化</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#使用v-if代替v-show"><span class="nav-number">3.4.1.</span> <span class="nav-text">使用v-if代替v-show</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#v-for必须加上key，并避免同时使用v-if"><span class="nav-number">3.4.2.</span> <span class="nav-text">v-for必须加上key，并避免同时使用v-if</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#事件及时销毁"><span class="nav-number">3.4.3.</span> <span class="nav-text">事件及时销毁</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#资源提前请求"><span class="nav-number">3.4.4.</span> <span class="nav-text">资源提前请求</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#多使用异步组件和插件"><span class="nav-number">3.4.5.</span> <span class="nav-text">多使用异步组件和插件</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#网络优化"><span class="nav-number">3.5.</span> <span class="nav-text">网络优化</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#减少网络请求"><span class="nav-number">3.5.1.</span> <span class="nav-text">减少网络请求</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#DNS-解析优化"><span class="nav-number">3.5.2.</span> <span class="nav-text">DNS 解析优化</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#CDN-和-SSR"><span class="nav-number">3.5.3.</span> <span class="nav-text">CDN 和 SSR</span></a></li></ol></li></ol></li></ol></div>
             
 
           </div>
@@ -676,7 +808,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">32.3k</span>
+    <span title="Site words total count">37.4k</span>
   
 </div>
 
