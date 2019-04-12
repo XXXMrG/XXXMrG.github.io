@@ -79,20 +79,21 @@
 
 
 
-<meta name="description" content="题库主要来自于木易阳的 Github 整理和个人平时面试经验。题库收集原则上仅供笔者个人学习整理所用，一切版权都归 Reference 及相应公司所有。  2019/04/11 第 52 题：怎么让一个 div 水平垂直居中  第 52 题：怎么让一个 div 水平垂直居中 · Issue #92 · Advanced-Frontend/Daily-Interview-Question · Gi">
+<meta name="description" content="题库主要来自于木易阳的 Github 整理和个人平时面试经验。题库收集原则上仅供笔者个人学习整理所用，一切版权都归 Reference 及相应公司所有。  2019/04/12 输出以下代码的执行结果并解释为什么  123456var a = &amp;#123;n: 1&amp;#125;;var b = a;a.x = a = &amp;#123;n: 2&amp;#125;;console.log(a.x) 	// =&amp;">
 <meta name="keywords" content="front_end">
 <meta property="og:type" content="article">
 <meta property="og:title" content="每天（不知道有几）道前端面试题">
 <meta property="og:url" content="https://xkeith.space/2019/04/04/arc-13/index.html">
 <meta property="og:site_name" content="旧港">
-<meta property="og:description" content="题库主要来自于木易阳的 Github 整理和个人平时面试经验。题库收集原则上仅供笔者个人学习整理所用，一切版权都归 Reference 及相应公司所有。  2019/04/11 第 52 题：怎么让一个 div 水平垂直居中  第 52 题：怎么让一个 div 水平垂直居中 · Issue #92 · Advanced-Frontend/Daily-Interview-Question · Gi">
+<meta property="og:description" content="题库主要来自于木易阳的 Github 整理和个人平时面试经验。题库收集原则上仅供笔者个人学习整理所用，一切版权都归 Reference 及相应公司所有。  2019/04/12 输出以下代码的执行结果并解释为什么  123456var a = &amp;#123;n: 1&amp;#125;;var b = a;a.x = a = &amp;#123;n: 2&amp;#125;;console.log(a.x) 	// =&amp;">
 <meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="https://i.loli.net/2019/04/12/5cb0a8c8c5289.png">
 <meta property="og:image" content="https://i.loli.net/2019/04/09/5cabef583424c.png">
-<meta property="og:updated_time" content="2019-04-11T13:17:43.802Z">
+<meta property="og:updated_time" content="2019-04-12T15:05:45.019Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="每天（不知道有几）道前端面试题">
-<meta name="twitter:description" content="题库主要来自于木易阳的 Github 整理和个人平时面试经验。题库收集原则上仅供笔者个人学习整理所用，一切版权都归 Reference 及相应公司所有。  2019/04/11 第 52 题：怎么让一个 div 水平垂直居中  第 52 题：怎么让一个 div 水平垂直居中 · Issue #92 · Advanced-Frontend/Daily-Interview-Question · Gi">
-<meta name="twitter:image" content="https://i.loli.net/2019/04/09/5cabef583424c.png">
+<meta name="twitter:description" content="题库主要来自于木易阳的 Github 整理和个人平时面试经验。题库收集原则上仅供笔者个人学习整理所用，一切版权都归 Reference 及相应公司所有。  2019/04/12 输出以下代码的执行结果并解释为什么  123456var a = &amp;#123;n: 1&amp;#125;;var b = a;a.x = a = &amp;#123;n: 2&amp;#125;;console.log(a.x) 	// =&amp;">
+<meta name="twitter:image" content="https://i.loli.net/2019/04/12/5cb0a8c8c5289.png">
 
 
 
@@ -348,7 +349,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  2.2k
+                  2.3k
                 </span>
               
 
@@ -388,8 +389,16 @@
         <hr>
 <font color="#FF0000">题库主要来自于<a href="http://yygmind.github.io/" target="_blank" rel="noopener">木易阳</a>的 Github 整理和个人平时面试经验。<br>题库收集原则上仅供笔者个人学习整理所用，一切版权都归 Reference 及相应公司所有。</font>
 
+<h2 id="2019-04-12"><a href="#2019-04-12" class="headerlink" title="2019/04/12"></a>2019/04/12</h2><blockquote>
+<p>输出以下代码的执行结果并解释为什么</p>
+</blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a = &#123;<span class="attr">n</span>: <span class="number">1</span>&#125;;</span><br><span class="line"><span class="keyword">var</span> b = a;</span><br><span class="line">a.x = a = &#123;<span class="attr">n</span>: <span class="number">2</span>&#125;;</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(a.x) 	<span class="comment">// =&gt; undefined</span></span><br><span class="line"><span class="built_in">console</span>.log(b.x)        <span class="comment">// =&gt; &#123;n:2&#125;</span></span><br></pre></td></tr></table></figure>
+<ol>
+<li>优先级。.的优先级高于=，所以先执行a.x，堆内存中的{n: 1}就会变成{n: 1, x: undefined}，改变之后相应的b.x也变化了，因为指向的是同一个对象。</li>
+<li>赋值操作是从右到左，所以先执行a = {n: 2}，a的引用就被改变了，然后这个返回值又赋值给了a.x，需要注意的是这时候a.x是第一步中的{n: 1, x: undefined}那个对象，其实就是b.x，相当于b.x = {n: 2}<br><img src="https://i.loli.net/2019/04/12/5cb0a8c8c5289.png" alt="5cb0a8c8c5289.png"></li>
+</ol>
 <h2 id="2019-04-11"><a href="#2019-04-11" class="headerlink" title="2019/04/11"></a>2019/04/11</h2><blockquote>
-<p>第 52 题：怎么让一个 div 水平垂直居中</p>
+<p>怎么让一个 div 水平垂直居中</p>
 </blockquote>
 <p><a href="https://github.com/Advanced-Frontend/Daily-Interview-Question/issues/92" target="_blank" rel="noopener">第 52 题：怎么让一个 div 水平垂直居中 · Issue #92 · Advanced-Frontend/Daily-Interview-Question · GitHub</a></p>
 <blockquote>
@@ -746,7 +755,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#2019-04-11"><span class="nav-number">1.</span> <span class="nav-text">2019/04/11</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2019-04-10"><span class="nav-number">2.</span> <span class="nav-text">2019/04/10</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2019-04-09"><span class="nav-number">3.</span> <span class="nav-text">2019/04/09</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2019-04-08"><span class="nav-number">4.</span> <span class="nav-text">2019/04/08</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2019-04-07"><span class="nav-number">5.</span> <span class="nav-text">2019/04/07</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2019-04-06"><span class="nav-number">6.</span> <span class="nav-text">2019/04/06</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2019-04-05"><span class="nav-number">7.</span> <span class="nav-text">2019/04/05</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2019-04-04"><span class="nav-number">8.</span> <span class="nav-text">2019/04/04</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2019-04-03"><span class="nav-number">9.</span> <span class="nav-text">2019/04/03</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2019-04-02"><span class="nav-number">10.</span> <span class="nav-text">2019/04/02</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Reference"><span class="nav-number">11.</span> <span class="nav-text">Reference</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#2019-04-12"><span class="nav-number">1.</span> <span class="nav-text">2019/04/12</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2019-04-11"><span class="nav-number">2.</span> <span class="nav-text">2019/04/11</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2019-04-10"><span class="nav-number">3.</span> <span class="nav-text">2019/04/10</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2019-04-09"><span class="nav-number">4.</span> <span class="nav-text">2019/04/09</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2019-04-08"><span class="nav-number">5.</span> <span class="nav-text">2019/04/08</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2019-04-07"><span class="nav-number">6.</span> <span class="nav-text">2019/04/07</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2019-04-06"><span class="nav-number">7.</span> <span class="nav-text">2019/04/06</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2019-04-05"><span class="nav-number">8.</span> <span class="nav-text">2019/04/05</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2019-04-04"><span class="nav-number">9.</span> <span class="nav-text">2019/04/04</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2019-04-03"><span class="nav-number">10.</span> <span class="nav-text">2019/04/03</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2019-04-02"><span class="nav-number">11.</span> <span class="nav-text">2019/04/02</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Reference"><span class="nav-number">12.</span> <span class="nav-text">Reference</span></a></li></ol></div>
             
 
           </div>
@@ -780,7 +789,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">44k</span>
+    <span title="Site words total count">44.2k</span>
   
 </div>
 
