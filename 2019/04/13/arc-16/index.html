@@ -79,22 +79,21 @@
 
 
 
-<meta name="description" content="定义Model-View-ViewModel MVVM 其实就是提供 View 和 Model 的双向绑定，由前端架构而兴起，为了解决大前端中对 DOM 的频繁操作带来的性能问题，也让前端如 H5 界面拥有了更强大的功能，甚至可以独立与服务端完成数据操作。 Vue.js 是部分遵循了 MVVM 架构的（官方说法可不是一个完全遵循 MVVM 的框架），主打的就是数据驱动的架构方法，采用了数据劫持的">
+<meta name="description" content="在进行窗口的resize、scroll，输入框内容校验等操作时，如果事件处理函数调用的频率无限制，会产生大量 DOM 重绘，使浏览器性能下降，导致用户体验非常糟糕。此时我们可以采用debounce（防抖）和throttle（节流）的方式来减少调用频率，同时又不影响实际效果。 函数防抖函数防抖（debounce）：当持续触发事件时，一定时间段内没有再触发事件，事件处理函数才会执行一次，如果设定的时">
 <meta name="keywords" content="front_end">
 <meta property="og:type" content="article">
-<meta property="og:title" content="如何拿下前端面试（基础篇之 MVVM）">
-<meta property="og:url" content="https://xkeith.space/2019/03/23/arc-07/index.html">
+<meta property="og:title" content="小谈防抖和节流">
+<meta property="og:url" content="https://xkeith.space/2019/04/13/arc-16/index.html">
 <meta property="og:site_name" content="旧港">
-<meta property="og:description" content="定义Model-View-ViewModel MVVM 其实就是提供 View 和 Model 的双向绑定，由前端架构而兴起，为了解决大前端中对 DOM 的频繁操作带来的性能问题，也让前端如 H5 界面拥有了更强大的功能，甚至可以独立与服务端完成数据操作。 Vue.js 是部分遵循了 MVVM 架构的（官方说法可不是一个完全遵循 MVVM 的框架），主打的就是数据驱动的架构方法，采用了数据劫持的">
+<meta property="og:description" content="在进行窗口的resize、scroll，输入框内容校验等操作时，如果事件处理函数调用的频率无限制，会产生大量 DOM 重绘，使浏览器性能下降，导致用户体验非常糟糕。此时我们可以采用debounce（防抖）和throttle（节流）的方式来减少调用频率，同时又不影响实际效果。 函数防抖函数防抖（debounce）：当持续触发事件时，一定时间段内没有再触发事件，事件处理函数才会执行一次，如果设定的时">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="https://i.loli.net/2019/03/23/5c95aee3d8d8e.png">
-<meta property="og:image" content="https://i.loli.net/2019/03/23/5c95aeeebb3af.png">
-<meta property="og:image" content="https://i.loli.net/2019/03/23/5c95af1a51008.png">
-<meta property="og:updated_time" content="2019-03-23T03:59:39.641Z">
+<meta property="og:image" content="https://i.loli.net/2019/04/13/5cb1e56c3e109.png">
+<meta property="og:image" content="https://i.loli.net/2019/04/13/5cb1e579c3f81.png">
+<meta property="og:updated_time" content="2019-04-13T13:35:22.444Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="如何拿下前端面试（基础篇之 MVVM）">
-<meta name="twitter:description" content="定义Model-View-ViewModel MVVM 其实就是提供 View 和 Model 的双向绑定，由前端架构而兴起，为了解决大前端中对 DOM 的频繁操作带来的性能问题，也让前端如 H5 界面拥有了更强大的功能，甚至可以独立与服务端完成数据操作。 Vue.js 是部分遵循了 MVVM 架构的（官方说法可不是一个完全遵循 MVVM 的框架），主打的就是数据驱动的架构方法，采用了数据劫持的">
-<meta name="twitter:image" content="https://i.loli.net/2019/03/23/5c95aee3d8d8e.png">
+<meta name="twitter:title" content="小谈防抖和节流">
+<meta name="twitter:description" content="在进行窗口的resize、scroll，输入框内容校验等操作时，如果事件处理函数调用的频率无限制，会产生大量 DOM 重绘，使浏览器性能下降，导致用户体验非常糟糕。此时我们可以采用debounce（防抖）和throttle（节流）的方式来减少调用频率，同时又不影响实际效果。 函数防抖函数防抖（debounce）：当持续触发事件时，一定时间段内没有再触发事件，事件处理函数才会执行一次，如果设定的时">
+<meta name="twitter:image" content="https://i.loli.net/2019/04/13/5cb1e56c3e109.png">
 
 
 
@@ -124,13 +123,13 @@
 
 
 
-  <link rel="canonical" href="https://xkeith.space/2019/03/23/arc-07/">
+  <link rel="canonical" href="https://xkeith.space/2019/04/13/arc-16/">
 
 
 
 
 
-  <title>如何拿下前端面试（基础篇之 MVVM） | 旧港</title>
+  <title>小谈防抖和节流 | 旧港</title>
   
 
 
@@ -267,7 +266,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://xkeith.space/2019/03/23/arc-07/">
+    <link itemprop="mainEntityOfPage" href="https://xkeith.space/2019/04/13/arc-16/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Keith">
@@ -284,7 +283,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">如何拿下前端面试（基础篇之 MVVM）</h1>
+          <h1 class="post-title" itemprop="name headline">小谈防抖和节流</h1>
         
 
         <div class="post-meta">
@@ -296,8 +295,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-03-23T11:57:18+08:00">
-                2019-03-23
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-04-13T21:33:39+08:00">
+                2019-04-13
               </time>
             
 
@@ -350,7 +349,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  1.4k
+                  684
                 </span>
               
 
@@ -366,7 +365,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  4
+                  2
                 </span>
               
             </div>
@@ -388,48 +387,16 @@
 
       
         <hr>
-<h2 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h2><p><em>Model-View-ViewModel</em></p>
-<p>MVVM 其实就是提供 View 和 Model 的双向绑定，由前端架构而兴起，为了解决大前端中对 DOM 的频繁操作带来的性能问题，也让前端如 H5 界面拥有了更强大的功能，甚至可以独立与服务端完成数据操作。</p>
-<p>Vue.js 是部分遵循了 MVVM 架构的（官方说法可不是一个完全遵循 MVVM 的框架），主打的就是数据驱动的架构方法，采用了数据劫持的方法来为我们实现了 ViewModel 中的双向数据绑定，可以自动保持视图和数据的一致性，让开发更加高效，便捷。</p>
-<p>MVVM，说到底还是一种分层架构。它的分层如下：</p>
-<ul>
-<li>Model: 域模型，用于持久化</li>
-<li>View: 作为视图模板存在</li>
-<li>ViewModel: 作为视图的模型，为视图服务</li>
-</ul>
-<p><img src="https://i.loli.net/2019/03/23/5c95aee3d8d8e.png" alt="5c95aee3d8d8e.png"></p>
-<h2 id="为什么不用-MVC"><a href="#为什么不用-MVC" class="headerlink" title="为什么不用 MVC"></a>为什么不用 MVC</h2><p>既然我们想要前端也拥有实现数据操作业务的功能，那么我们为什么不选择更加成熟的 MVC 呢？</p>
-<p>传统的 MVC 在前端开发中会暴露以下几个问题：</p>
-<ol>
-<li>开发者在代码中大量调用相同的 DOM API, 处理繁琐 ，操作冗余，使得代码难以维护。</li>
-<li>大量的DOM 操作使页面渲染性能降低，加载速度变慢，影响用户体验。</li>
-<li>当 Model 频繁发生变化，开发者需要主动更新到View ；当用户的操作导致 Model 发生变化，开发者同样需要将变化的数据同步到Model 中，这样的工作不仅繁琐，而且很难维护复杂多变的数据状态。</li>
-</ol>
-<p><strong>主要的问题实际上还是直接对原生 DOM 的频繁操作实在是太繁琐而且拉低渲染性能了。</strong></p>
-<p>MVVM 实际上就是把 Model 和 View 之间的同步逻辑自动化了，VM 代替了 MVP 中的 Presenter，而且不在需要我们进行手动操作，整个前端架构的逻辑统统交给数据来驱动。</p>
-<ul>
-<li>视图引擎<br>视图引擎：我是视图引擎，我为 View 层作为视图模板提供强力支持，开发者，你们不需要操作 DOM ，丢给我来做！</li>
-<li>数据存取器<br>数据存取器：我是数据存取器，我可以通过<strong>Object.defineProperty()</strong>API 轻松定义，或通过自行封装存取函数的方式曲线完成。我的内部往往封装了<strong>发布/订阅模式</strong>，以此来完成对数据的监听、数据变更时通知更新。我是<strong>数据绑定</strong>实现的基础。</li>
-<li>组件机制<br>组件机制：我是组件机制。有追求的开发者往往希望按照面向未来的组件标准 －<strong>Web Components</strong>的方式开发，我是为了满足你的追求而生。MVVM 框架提供组件的定义、继承、生命周期、组件间通信机制，为开发者面向未来开发点亮明灯。</li>
-</ul>
-<p><img src="https://i.loli.net/2019/03/23/5c95aeeebb3af.png" alt="5c95aeeebb3af.png"></p>
-<h2 id="Vue-里头是怎么实现的"><a href="#Vue-里头是怎么实现的" class="headerlink" title="Vue 里头是怎么实现的"></a>Vue 里头是怎么实现的</h2><p>不同的MVVM框架中，实现双向数据绑定的技术有所不同。目前一些主流的前端框架实现数据绑定的方式大致有以下几种：</p>
-<ul>
-<li>数据劫持 (Vue)</li>
-<li>发布-订阅模式 (Knockout、Backbone)</li>
-<li>脏值检查 (Angular)</li>
-</ul>
-<p>Vue.js 是采用 Object.defineProperty 的 getter 和 setter，并结合观察者模式来实现数据绑定的。当把一个普通 Javascript 对象传给 Vue 实例来作为它的 data选项时，Vue 将遍历它的属性，用Object.defineProperty将它们转为 getter/setter。用户看不到 getter/setter，但是在内部它们让 Vue 追踪依赖，在属性被访问和修改时通知变化。</p>
-<p><img src="https://i.loli.net/2019/03/23/5c95af1a51008.png" alt="5c95af1a51008.png"></p>
-<p>从图中可以看出，当执行 new Vue() 时，Vue 就进入了初始化阶段，一方面Vue 会遍历 data 选项中的属性，并用Object.defineProperty将它们转为 getter/setter，实现数据变化监听功能；另一方面，Vue 的指令编译器Compile 对元素节点的指令进行扫描和解析，初始化视图，并订阅Watcher 来更新视图， 此时Wather 会将自己添加到消息订阅器中(Dep),初始化完毕。<br>当数据发生变化时，Observer 中的 setter 方法被触发，setter 会立即调用Dep.notify()，Dep 开始遍历所有的订阅者，并调用订阅者的 update 方法，订阅者收到通知后对视图进行相应的更新。</p>
-<ul>
-<li>Observer数据监听器，能够对数据对象的所有属性进行监听，如有变动可拿到最新值并通知订阅者，内部采用Object.defineProperty的getter和setter来实现。</li>
-<li>Compile指令解析器，它的作用对每个元素节点的指令进行扫描和解析，根据指令模板替换数据，以及绑定相应的更新函数。</li>
-<li>Watcher订阅者， 作为连接 Observer 和 Compile 的桥梁，能够订阅并收到每个属性变动的通知，执行指令绑定的相应回调函数。</li>
-<li>Dep消息订阅器，内部维护了一个数组，用来收集订阅者（Watcher），数据变动触发notify 函数，再调用订阅者的 update 方法。</li>
-</ul>
-<p><strong>实际上实现数据双向绑定的代码并不复杂，我们可以参考下面的链接自己试着实现一下</strong></p>
-<h2 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h2><p><a href="https://blog.csdn.net/u014346301/article/details/53812770" target="_blank" rel="noopener">Vue.js 和 MVVM - SweetoDream - CSDN博客</a><br><a href="https://juejin.im/post/593021272f301e0058273468" target="_blank" rel="noopener">浅析前端开发中的 MVC/MVP/MVVM 模式 - 掘金</a><br><a href="https://juejin.im/post/5abdd6f6f265da23793c4458" target="_blank" rel="noopener">不好意思！耽误你的十分钟，让MVVM原理还给你 - 掘金</a><br><a href="https://segmentfault.com/a/1190000010756245" target="_blank" rel="noopener">什么是MVVM - JrayZhang - SegmentFault 思否</a></p>
+<p>在进行窗口的<code>resize</code>、<code>scroll</code>，输入框内容校验等操作时，如果事件处理函数调用的频率无限制，会产生大量 DOM 重绘，使浏览器性能下降，导致用户体验非常糟糕。此时我们可以采用<em>debounce（防抖）</em>和<em>throttle（节流）</em>的方式来减少调用频率，同时又不影响实际效果。</p>
+<h2 id="函数防抖"><a href="#函数防抖" class="headerlink" title="函数防抖"></a>函数防抖</h2><p>函数防抖（debounce）：当持续触发事件时，一定时间段内没有再触发事件，事件处理函数才会执行一次，如果设定的时间到来之前，又一次触发了事件，就重新开始延时。如下图，持续触发scroll事件时，并不执行handle函数，当1000毫秒内没有触发scroll事件时，才会延时触发scroll事件。</p>
+<p><img src="https://i.loli.net/2019/04/13/5cb1e56c3e109.png" alt="5cb1e56c3e109.png"></p>
+<p><strong>防抖最常见的使用场景就是带有即时搜索功能的文本框了，如果每输入一个字符都要进行一次请求的话会大大拖慢性能，因此在结束输入的一段时间后再发起请求是比较常见的防止页面抖动的方式。</strong></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">debounce</span>(<span class="params">fn, wait</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> timeout = <span class="literal">null</span>;</span><br><span class="line">    <span class="keyword">return</span> <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">        timeout &amp;&amp; clearTimeout(timeout);</span><br><span class="line">        timeout = setTimeout(<span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">            fn.call(<span class="keyword">this</span>, <span class="built_in">arguments</span>);</span><br><span class="line">        &#125;, wait);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="函数节流"><a href="#函数节流" class="headerlink" title="函数节流"></a>函数节流</h2><p>函数节流（throttle）：当持续触发事件时，保证一定时间段内只调用一次事件处理函数。节流通俗解释就比如我们水龙头放水，阀门一打开，水哗哗的往下流，秉着勤俭节约的优良传统美德，我们要把水龙头关小点，最好是如我们心意按照一定规律在某个时间间隔内一滴一滴的往下滴。如下图，持续触发scroll事件时，并不立即执行handle函数，每隔1000毫秒才会执行一次handle函数。</p>
+<p><img src="https://i.loli.net/2019/04/13/5cb1e579c3f81.png" alt="5cb1e579c3f81.png"></p>
+<p><strong>节流最常见的使用场景就是资源懒加载的时候要计算滚动条的位置，如果用户反复触发滚动条移动会使得多次触发计算，我们常常使用节流按一定的时间频率获取滚动条位置。</strong><br><strong>或者在用户提交的时候，我们在已知接口大致返回时间的情况下，可以使用节流限制用户的请求频率。</strong><br>事件的重复触发并不会使得函数彻底停止触发，而是让其按照给定的时间触发。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 节流函数</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">throttle</span>(<span class="params">fn, wait</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">let</span> canRun = <span class="literal">true</span>;</span><br><span class="line">    <span class="keyword">return</span> <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (!canRun) <span class="keyword">return</span>;</span><br><span class="line">        <span class="comment">// 这句话是用来防止多次重复触发的关键</span></span><br><span class="line">        canRun = <span class="literal">false</span>;</span><br><span class="line">        setTimeout(<span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">            fn.call(<span class="keyword">this</span>, <span class="built_in">arguments</span>);</span><br><span class="line">            canRun = <span class="literal">true</span>;</span><br><span class="line">        &#125;, wait);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h2><p><a href="https://mp.weixin.qq.com/s/Vkshf-nEDwo2ODUJhxgzVA" target="_blank" rel="noopener">JS的防抖与节流</a><br><a href="https://juejin.im/post/5c87b54ce51d455f7943dddb#chapter-three" target="_blank" rel="noopener">2019 面试准备 - JS 防抖与节流 - 掘金</a></p>
 
       
     </div>
@@ -450,7 +417,7 @@
   </li>
   <li class="post-copyright-link">
     <strong>本文链接：</strong>
-    <a href="https://xkeith.space/2019/03/23/arc-07/" title="如何拿下前端面试（基础篇之 MVVM）">https://xkeith.space/2019/03/23/arc-07/</a>
+    <a href="https://xkeith.space/2019/04/13/arc-16/" title="小谈防抖和节流">https://xkeith.space/2019/04/13/arc-16/</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>
@@ -490,8 +457,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/03/22/arc-06/" rel="next" title="正则表达式详解（JavaScript 描述）">
-                <i class="fa fa-chevron-left"></i> 正则表达式详解（JavaScript 描述）
+              <a href="/2019/04/11/arc-15/" rel="next" title="如何拿下前端面试（函数和上下文闭包）">
+                <i class="fa fa-chevron-left"></i> 如何拿下前端面试（函数和上下文闭包）
               </a>
             
           </div>
@@ -500,8 +467,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2019/03/23/arc-08/" rel="prev" title="如何拿下前端面试（网络篇）">
-                如何拿下前端面试（网络篇） <i class="fa fa-chevron-right"></i>
+              <a href="/2019/04/13/arc-13/" rel="prev" title="每天（不知道有几）道前端面试题">
+                每天（不知道有几）道前端面试题 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -669,7 +636,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#定义"><span class="nav-number">1.</span> <span class="nav-text">定义</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#为什么不用-MVC"><span class="nav-number">2.</span> <span class="nav-text">为什么不用 MVC</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Vue-里头是怎么实现的"><span class="nav-number">3.</span> <span class="nav-text">Vue 里头是怎么实现的</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Reference"><span class="nav-number">4.</span> <span class="nav-text">Reference</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#函数防抖"><span class="nav-number">1.</span> <span class="nav-text">函数防抖</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#函数节流"><span class="nav-number">2.</span> <span class="nav-text">函数节流</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Reference"><span class="nav-number">3.</span> <span class="nav-text">Reference</span></a></li></ol></div>
             
 
           </div>
