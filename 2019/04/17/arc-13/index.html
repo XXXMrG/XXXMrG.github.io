@@ -79,22 +79,22 @@
 
 
 
-<meta name="description" content="题库主要来自于木易阳的 Github 整理和个人平时面试经验。题库收集原则上仅供笔者个人学习整理所用，一切版权都归 Reference 及相应公司所有。   2019/04/16 某公司 1 到 12 月份的销售额存在一个对象里面，如下：{1:222, 2:123, 5:888}，请把数据处理为如下结构：[222, 123, null, null, 888, null, null, null,">
+<meta name="description" content="题库主要来自于木易阳的 Github 整理和个人平时面试经验。题库收集原则上仅供笔者个人学习整理所用，一切版权都归 Reference 及相应公司所有。  2019/04/17 要求设计 LazyMan 类，实现以下功能。  123456789101112131415161718192021LazyMan(&apos;Tony&apos;);// Hi I am TonyLazyMan(&apos;Tony&apos;).sleep(">
 <meta name="keywords" content="front_end">
 <meta property="og:type" content="article">
 <meta property="og:title" content="每天（不知道有几）道前端面试题">
-<meta property="og:url" content="https://xkeith.space/2019/04/16/arc-13/index.html">
+<meta property="og:url" content="https://xkeith.space/2019/04/17/arc-13/index.html">
 <meta property="og:site_name" content="旧港">
-<meta property="og:description" content="题库主要来自于木易阳的 Github 整理和个人平时面试经验。题库收集原则上仅供笔者个人学习整理所用，一切版权都归 Reference 及相应公司所有。   2019/04/16 某公司 1 到 12 月份的销售额存在一个对象里面，如下：{1:222, 2:123, 5:888}，请把数据处理为如下结构：[222, 123, null, null, 888, null, null, null,">
+<meta property="og:description" content="题库主要来自于木易阳的 Github 整理和个人平时面试经验。题库收集原则上仅供笔者个人学习整理所用，一切版权都归 Reference 及相应公司所有。  2019/04/17 要求设计 LazyMan 类，实现以下功能。  123456789101112131415161718192021LazyMan(&apos;Tony&apos;);// Hi I am TonyLazyMan(&apos;Tony&apos;).sleep(">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="https://i.loli.net/2019/04/16/5cb5e1606650f.png">
 <meta property="og:image" content="https://i.loli.net/2019/04/15/5cb445dc7c576.png">
 <meta property="og:image" content="https://i.loli.net/2019/04/12/5cb0a8c8c5289.png">
 <meta property="og:image" content="https://i.loli.net/2019/04/09/5cabef583424c.png">
-<meta property="og:updated_time" content="2019-04-16T14:06:26.899Z">
+<meta property="og:updated_time" content="2019-04-17T13:10:31.047Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="每天（不知道有几）道前端面试题">
-<meta name="twitter:description" content="题库主要来自于木易阳的 Github 整理和个人平时面试经验。题库收集原则上仅供笔者个人学习整理所用，一切版权都归 Reference 及相应公司所有。   2019/04/16 某公司 1 到 12 月份的销售额存在一个对象里面，如下：{1:222, 2:123, 5:888}，请把数据处理为如下结构：[222, 123, null, null, 888, null, null, null,">
+<meta name="twitter:description" content="题库主要来自于木易阳的 Github 整理和个人平时面试经验。题库收集原则上仅供笔者个人学习整理所用，一切版权都归 Reference 及相应公司所有。  2019/04/17 要求设计 LazyMan 类，实现以下功能。  123456789101112131415161718192021LazyMan(&apos;Tony&apos;);// Hi I am TonyLazyMan(&apos;Tony&apos;).sleep(">
 <meta name="twitter:image" content="https://i.loli.net/2019/04/16/5cb5e1606650f.png">
 
 
@@ -125,7 +125,7 @@
 
 
 
-  <link rel="canonical" href="https://xkeith.space/2019/04/16/arc-13/">
+  <link rel="canonical" href="https://xkeith.space/2019/04/17/arc-13/">
 
 
 
@@ -268,7 +268,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://xkeith.space/2019/04/16/arc-13/">
+    <link itemprop="mainEntityOfPage" href="https://xkeith.space/2019/04/17/arc-13/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Keith">
@@ -297,8 +297,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-04-16T23:44:56+08:00">
-                2019-04-16
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-04-17T23:44:56+08:00">
+                2019-04-17
               </time>
             
 
@@ -351,7 +351,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  3.5k
+                  3.7k
                 </span>
               
 
@@ -367,7 +367,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  14
+                  15
                 </span>
               
             </div>
@@ -391,7 +391,22 @@
         <hr>
 <font color="#FF0000">题库主要来自于<a href="http://yygmind.github.io/" target="_blank" rel="noopener">木易阳</a>的 Github 整理和个人平时面试经验。<br>题库收集原则上仅供笔者个人学习整理所用，一切版权都归 Reference 及相应公司所有。</font>
 
-
+<h2 id="2019-04-17"><a href="#2019-04-17" class="headerlink" title="2019/04/17"></a>2019/04/17</h2><blockquote>
+<p>要求设计 LazyMan 类，实现以下功能。</p>
+</blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">LazyMan(<span class="string">'Tony'</span>);</span><br><span class="line"><span class="comment">// Hi I am Tony</span></span><br><span class="line"></span><br><span class="line">LazyMan(<span class="string">'Tony'</span>).sleep(<span class="number">10</span>).eat(<span class="string">'lunch'</span>);</span><br><span class="line"><span class="comment">// Hi I am Tony</span></span><br><span class="line"><span class="comment">// 等待了10秒...</span></span><br><span class="line"><span class="comment">// I am eating lunch</span></span><br><span class="line"></span><br><span class="line">LazyMan(<span class="string">'Tony'</span>).eat(<span class="string">'lunch'</span>).sleep(<span class="number">10</span>).eat(<span class="string">'dinner'</span>);</span><br><span class="line"><span class="comment">// Hi I am Tony</span></span><br><span class="line"><span class="comment">// I am eating lunch</span></span><br><span class="line"><span class="comment">// 等待了10秒...</span></span><br><span class="line"><span class="comment">// I am eating diner</span></span><br><span class="line"></span><br><span class="line">LazyMan(<span class="string">'Tony'</span>).eat(<span class="string">'lunch'</span>).eat(<span class="string">'dinner'</span>).sleepFirst(<span class="number">5</span>).sleep(<span class="number">10</span>).eat(<span class="string">'junk food'</span>);</span><br><span class="line"><span class="comment">// Hi I am Tony</span></span><br><span class="line"><span class="comment">// 等待了5秒...</span></span><br><span class="line"><span class="comment">// I am eating lunch</span></span><br><span class="line"><span class="comment">// I am eating dinner</span></span><br><span class="line"><span class="comment">// 等待了10秒...</span></span><br><span class="line"><span class="comment">// I am eating junk food</span></span><br></pre></td></tr></table></figure>
+<p>Solution:<br><a href="https://github.com/XXXMrG/javascript-snippets/blob/master/snippets/lazyMan.js" target="_blank" rel="noopener">javascript-snippets/lazyMan.js at master · XXXMrG/javascript-snippets · GitHub</a></p>
+<blockquote>
+<p>visibility: hidden 和 display: none 的区别</p>
+</blockquote>
+<p><code>visibility: hidden</code></p>
+<p>DOM 树中会渲染，只是不显示，控件依然占据着空间，因此在重新显示的时候不会触发回流，只会触发重绘。</p>
+<p><code>display: none</code></p>
+<p>DOM 树中都不会渲染，因此是完全从页面中消失，所以重新显示的时候会触发回流，反复触发会影响性能。</p>
+<p><code>v-show</code></p>
+<p>肯定会编译，并且是通过控制 css 来控制显隐，适合多次操作的情况，性能会好一点。</p>
+<p><code>v-if</code></p>
+<p>初始值是 false 就不编译，是通过操作 DOM 来控制显隐，每次都会销毁/重建，性能较差。</p>
 <h2 id="2019-04-16"><a href="#2019-04-16" class="headerlink" title="2019/04/16"></a>2019/04/16</h2><blockquote>
 <p>某公司 1 到 12 月份的销售额存在一个对象里面，如下：{1:222, 2:123, 5:888}，请把数据处理为如下结构：[222, 123, null, null, 888, null, null, null, null, null, null, null]。</p>
 </blockquote>
@@ -581,7 +596,7 @@
   </li>
   <li class="post-copyright-link">
     <strong>本文链接：</strong>
-    <a href="https://xkeith.space/2019/04/16/arc-13/" title="每天（不知道有几）道前端面试题">https://xkeith.space/2019/04/16/arc-13/</a>
+    <a href="https://xkeith.space/2019/04/17/arc-13/" title="每天（不知道有几）道前端面试题">https://xkeith.space/2019/04/17/arc-13/</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>
@@ -796,7 +811,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#2019-04-16"><span class="nav-number">1.</span> <span class="nav-text">2019/04/16</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2019-04-15"><span class="nav-number">2.</span> <span class="nav-text">2019/04/15</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2019-04-14"><span class="nav-number">3.</span> <span class="nav-text">2019/04/14</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2019-04-13"><span class="nav-number">4.</span> <span class="nav-text">2019/04/13</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2019-04-12"><span class="nav-number">5.</span> <span class="nav-text">2019/04/12</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2019-04-11"><span class="nav-number">6.</span> <span class="nav-text">2019/04/11</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2019-04-10"><span class="nav-number">7.</span> <span class="nav-text">2019/04/10</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2019-04-09"><span class="nav-number">8.</span> <span class="nav-text">2019/04/09</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2019-04-08"><span class="nav-number">9.</span> <span class="nav-text">2019/04/08</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2019-04-07"><span class="nav-number">10.</span> <span class="nav-text">2019/04/07</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2019-04-06"><span class="nav-number">11.</span> <span class="nav-text">2019/04/06</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2019-04-05"><span class="nav-number">12.</span> <span class="nav-text">2019/04/05</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2019-04-04"><span class="nav-number">13.</span> <span class="nav-text">2019/04/04</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2019-04-03"><span class="nav-number">14.</span> <span class="nav-text">2019/04/03</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2019-04-02"><span class="nav-number">15.</span> <span class="nav-text">2019/04/02</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Reference"><span class="nav-number">16.</span> <span class="nav-text">Reference</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#2019-04-17"><span class="nav-number">1.</span> <span class="nav-text">2019/04/17</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2019-04-16"><span class="nav-number">2.</span> <span class="nav-text">2019/04/16</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2019-04-15"><span class="nav-number">3.</span> <span class="nav-text">2019/04/15</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2019-04-14"><span class="nav-number">4.</span> <span class="nav-text">2019/04/14</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2019-04-13"><span class="nav-number">5.</span> <span class="nav-text">2019/04/13</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2019-04-12"><span class="nav-number">6.</span> <span class="nav-text">2019/04/12</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2019-04-11"><span class="nav-number">7.</span> <span class="nav-text">2019/04/11</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2019-04-10"><span class="nav-number">8.</span> <span class="nav-text">2019/04/10</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2019-04-09"><span class="nav-number">9.</span> <span class="nav-text">2019/04/09</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2019-04-08"><span class="nav-number">10.</span> <span class="nav-text">2019/04/08</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2019-04-07"><span class="nav-number">11.</span> <span class="nav-text">2019/04/07</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2019-04-06"><span class="nav-number">12.</span> <span class="nav-text">2019/04/06</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2019-04-05"><span class="nav-number">13.</span> <span class="nav-text">2019/04/05</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2019-04-04"><span class="nav-number">14.</span> <span class="nav-text">2019/04/04</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2019-04-03"><span class="nav-number">15.</span> <span class="nav-text">2019/04/03</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2019-04-02"><span class="nav-number">16.</span> <span class="nav-text">2019/04/02</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Reference"><span class="nav-number">17.</span> <span class="nav-text">Reference</span></a></li></ol></div>
             
 
           </div>
@@ -830,7 +845,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">48.4k</span>
+    <span title="Site words total count">48.6k</span>
   
 </div>
 
