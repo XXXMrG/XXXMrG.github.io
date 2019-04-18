@@ -91,7 +91,7 @@
 <meta property="og:image" content="https://i.loli.net/2019/04/15/5cb445dc7c576.png">
 <meta property="og:image" content="https://i.loli.net/2019/04/12/5cb0a8c8c5289.png">
 <meta property="og:image" content="https://i.loli.net/2019/04/09/5cabef583424c.png">
-<meta property="og:updated_time" content="2019-04-17T13:10:31.047Z">
+<meta property="og:updated_time" content="2019-04-18T00:36:14.383Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="每天（不知道有几）道前端面试题">
 <meta name="twitter:description" content="题库主要来自于木易阳的 Github 整理和个人平时面试经验。题库收集原则上仅供笔者个人学习整理所用，一切版权都归 Reference 及相应公司所有。  2019/04/17 要求设计 LazyMan 类，实现以下功能。  123456789101112131415161718192021LazyMan(&apos;Tony&apos;);// Hi I am TonyLazyMan(&apos;Tony&apos;).sleep(">
@@ -351,7 +351,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  3.7k
+                  3.8k
                 </span>
               
 
@@ -403,6 +403,8 @@
 <p>DOM 树中会渲染，只是不显示，控件依然占据着空间，因此在重新显示的时候不会触发回流，只会触发重绘。</p>
 <p><code>display: none</code></p>
 <p>DOM 树中都不会渲染，因此是完全从页面中消失，所以重新显示的时候会触发回流，反复触发会影响性能。</p>
+<p><code>opacity: 0</code></p>
+<p>设置元素的不透明度为 0 ，控件依旧占据空间，常于 CSS 3 的 transition 搭配使用。</p>
 <p><code>v-show</code></p>
 <p>肯定会编译，并且是通过控制 css 来控制显隐，适合多次操作的情况，性能会好一点。</p>
 <p><code>v-if</code></p>
