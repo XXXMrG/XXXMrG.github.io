@@ -79,22 +79,22 @@
 
 
 
-<meta name="description" content="题库主要来自于木易阳的 Github 整理和个人平时面试经验。题库收集原则上仅供笔者个人学习整理所用，一切版权都归 Reference 及相应公司所有。  2019/04/18常见六大 Web 安全攻防解析cherry-blog 2019/04/17 要求设计 LazyMan 类，实现以下功能。  123456789101112131415161718192021LazyMan(&apos;Tony&apos;);">
+<meta name="description" content="题库主要来自于木易阳的 Github 整理和个人平时面试经验。题库收集原则上仅供笔者个人学习整理所用，一切版权都归 Reference 及相应公司所有。  2019/04/19 箭头函数与普通函数（function）的区别是什么？构造函数（function）可以使用 new 生成实例，那么箭头函数可以吗？为什么？  箭头函数是普通函数的简写，可以更优雅的定义一个函数，和普通函数相比，有以下几点差">
 <meta name="keywords" content="front_end">
 <meta property="og:type" content="article">
 <meta property="og:title" content="每天（不知道有几）道前端面试题">
 <meta property="og:url" content="https://xkeith.space/2019/04/18/arc-13/index.html">
 <meta property="og:site_name" content="旧港">
-<meta property="og:description" content="题库主要来自于木易阳的 Github 整理和个人平时面试经验。题库收集原则上仅供笔者个人学习整理所用，一切版权都归 Reference 及相应公司所有。  2019/04/18常见六大 Web 安全攻防解析cherry-blog 2019/04/17 要求设计 LazyMan 类，实现以下功能。  123456789101112131415161718192021LazyMan(&apos;Tony&apos;);">
+<meta property="og:description" content="题库主要来自于木易阳的 Github 整理和个人平时面试经验。题库收集原则上仅供笔者个人学习整理所用，一切版权都归 Reference 及相应公司所有。  2019/04/19 箭头函数与普通函数（function）的区别是什么？构造函数（function）可以使用 new 生成实例，那么箭头函数可以吗？为什么？  箭头函数是普通函数的简写，可以更优雅的定义一个函数，和普通函数相比，有以下几点差">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="https://i.loli.net/2019/04/16/5cb5e1606650f.png">
 <meta property="og:image" content="https://i.loli.net/2019/04/15/5cb445dc7c576.png">
 <meta property="og:image" content="https://i.loli.net/2019/04/12/5cb0a8c8c5289.png">
 <meta property="og:image" content="https://i.loli.net/2019/04/09/5cabef583424c.png">
-<meta property="og:updated_time" content="2019-04-18T15:01:17.730Z">
+<meta property="og:updated_time" content="2019-04-19T03:24:10.653Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="每天（不知道有几）道前端面试题">
-<meta name="twitter:description" content="题库主要来自于木易阳的 Github 整理和个人平时面试经验。题库收集原则上仅供笔者个人学习整理所用，一切版权都归 Reference 及相应公司所有。  2019/04/18常见六大 Web 安全攻防解析cherry-blog 2019/04/17 要求设计 LazyMan 类，实现以下功能。  123456789101112131415161718192021LazyMan(&apos;Tony&apos;);">
+<meta name="twitter:description" content="题库主要来自于木易阳的 Github 整理和个人平时面试经验。题库收集原则上仅供笔者个人学习整理所用，一切版权都归 Reference 及相应公司所有。  2019/04/19 箭头函数与普通函数（function）的区别是什么？构造函数（function）可以使用 new 生成实例，那么箭头函数可以吗？为什么？  箭头函数是普通函数的简写，可以更优雅的定义一个函数，和普通函数相比，有以下几点差">
 <meta name="twitter:image" content="https://i.loli.net/2019/04/16/5cb5e1606650f.png">
 
 
@@ -351,7 +351,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  3.8k
+                  4.1k
                 </span>
               
 
@@ -367,7 +367,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  15
+                  16
                 </span>
               
             </div>
@@ -391,6 +391,15 @@
         <hr>
 <font color="#FF0000">题库主要来自于<a href="http://yygmind.github.io/" target="_blank" rel="noopener">木易阳</a>的 Github 整理和个人平时面试经验。<br>题库收集原则上仅供笔者个人学习整理所用，一切版权都归 Reference 及相应公司所有。</font>
 
+<h2 id="2019-04-19"><a href="#2019-04-19" class="headerlink" title="2019/04/19"></a>2019/04/19</h2><blockquote>
+<p>箭头函数与普通函数（function）的区别是什么？构造函数（function）可以使用 new 生成实例，那么箭头函数可以吗？为什么？</p>
+</blockquote>
+<p>箭头函数是普通函数的简写，可以更优雅的定义一个函数，和普通函数相比，有以下几点差异：<br>1、函数体内的 this 对象，就是定义时所在的对象，而不是使用时所在的对象。<br>2、不可以使用 arguments 对象，该对象在函数体内不存在。如果要用，可以用 rest 参数代替。<br>3、不可以使用 yield 命令，因此箭头函数不能用作 Generator 函数。<br>4、不可以使用 new 命令，因为：</p>
+<ul>
+<li>没有自己的 this，无法调用 call，apply。</li>
+<li>没有 prototype 属性 ，而 new 命令在执行时需要将构造函数的 prototype 赋值给新的对象的 <strong>proto</strong></li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">newFunc</span>(<span class="params">father, ...rest</span>) </span>&#123;</span><br><span class="line"> <span class="comment">// 新建一个对象</span></span><br><span class="line">  <span class="keyword">var</span> result = &#123;&#125;;</span><br><span class="line"><span class="comment">// 原型绑定为构造函数的原型</span></span><br><span class="line">  result.__proto__ = father.prototype;</span><br><span class="line"><span class="comment">// 绑定 this 和参数</span></span><br><span class="line">  <span class="keyword">var</span> result2 = father.apply(result, rest);</span><br><span class="line"><span class="comment">// 根据返回值返回结果</span></span><br><span class="line">  <span class="keyword">if</span> (</span><br><span class="line">    (<span class="keyword">typeof</span> result2 === <span class="string">'object'</span> || <span class="keyword">typeof</span> result2 === <span class="string">'function'</span>) &amp;&amp;</span><br><span class="line">    result2 !== <span class="literal">null</span></span><br><span class="line">  ) &#123;</span><br><span class="line">    <span class="keyword">return</span> result2;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> result;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h2 id="2019-04-18"><a href="#2019-04-18" class="headerlink" title="2019/04/18"></a>2019/04/18</h2><p><a href="https://mp.weixin.qq.com/s/up35Zd8EmEfDVnvxOX9EmA" target="_blank" rel="noopener">常见六大 Web 安全攻防解析</a><br><a href="http://cherryblog.site/#/article/5cb0207f4bf15234265f32d0" target="_blank" rel="noopener">cherry-blog</a></p>
 <h2 id="2019-04-17"><a href="#2019-04-17" class="headerlink" title="2019/04/17"></a>2019/04/17</h2><blockquote>
 <p>要求设计 LazyMan 类，实现以下功能。</p>
@@ -814,7 +823,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#2019-04-18"><span class="nav-number">1.</span> <span class="nav-text">2019/04/18</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2019-04-17"><span class="nav-number">2.</span> <span class="nav-text">2019/04/17</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2019-04-16"><span class="nav-number">3.</span> <span class="nav-text">2019/04/16</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2019-04-15"><span class="nav-number">4.</span> <span class="nav-text">2019/04/15</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2019-04-14"><span class="nav-number">5.</span> <span class="nav-text">2019/04/14</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2019-04-13"><span class="nav-number">6.</span> <span class="nav-text">2019/04/13</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2019-04-12"><span class="nav-number">7.</span> <span class="nav-text">2019/04/12</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2019-04-11"><span class="nav-number">8.</span> <span class="nav-text">2019/04/11</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2019-04-10"><span class="nav-number">9.</span> <span class="nav-text">2019/04/10</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2019-04-09"><span class="nav-number">10.</span> <span class="nav-text">2019/04/09</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2019-04-08"><span class="nav-number">11.</span> <span class="nav-text">2019/04/08</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2019-04-07"><span class="nav-number">12.</span> <span class="nav-text">2019/04/07</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2019-04-06"><span class="nav-number">13.</span> <span class="nav-text">2019/04/06</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2019-04-05"><span class="nav-number">14.</span> <span class="nav-text">2019/04/05</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2019-04-04"><span class="nav-number">15.</span> <span class="nav-text">2019/04/04</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2019-04-03"><span class="nav-number">16.</span> <span class="nav-text">2019/04/03</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2019-04-02"><span class="nav-number">17.</span> <span class="nav-text">2019/04/02</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Reference"><span class="nav-number">18.</span> <span class="nav-text">Reference</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#2019-04-19"><span class="nav-number">1.</span> <span class="nav-text">2019/04/19</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2019-04-18"><span class="nav-number">2.</span> <span class="nav-text">2019/04/18</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2019-04-17"><span class="nav-number">3.</span> <span class="nav-text">2019/04/17</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2019-04-16"><span class="nav-number">4.</span> <span class="nav-text">2019/04/16</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2019-04-15"><span class="nav-number">5.</span> <span class="nav-text">2019/04/15</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2019-04-14"><span class="nav-number">6.</span> <span class="nav-text">2019/04/14</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2019-04-13"><span class="nav-number">7.</span> <span class="nav-text">2019/04/13</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2019-04-12"><span class="nav-number">8.</span> <span class="nav-text">2019/04/12</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2019-04-11"><span class="nav-number">9.</span> <span class="nav-text">2019/04/11</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2019-04-10"><span class="nav-number">10.</span> <span class="nav-text">2019/04/10</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2019-04-09"><span class="nav-number">11.</span> <span class="nav-text">2019/04/09</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2019-04-08"><span class="nav-number">12.</span> <span class="nav-text">2019/04/08</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2019-04-07"><span class="nav-number">13.</span> <span class="nav-text">2019/04/07</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2019-04-06"><span class="nav-number">14.</span> <span class="nav-text">2019/04/06</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2019-04-05"><span class="nav-number">15.</span> <span class="nav-text">2019/04/05</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2019-04-04"><span class="nav-number">16.</span> <span class="nav-text">2019/04/04</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2019-04-03"><span class="nav-number">17.</span> <span class="nav-text">2019/04/03</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2019-04-02"><span class="nav-number">18.</span> <span class="nav-text">2019/04/02</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Reference"><span class="nav-number">19.</span> <span class="nav-text">Reference</span></a></li></ol></div>
             
 
           </div>
@@ -848,7 +857,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">48.4k</span>
+    <span title="Site words total count">48.7k</span>
   
 </div>
 
