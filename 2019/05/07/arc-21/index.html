@@ -87,7 +87,7 @@
 <meta property="og:site_name" content="旧港">
 <meta property="og:description" content="题库主要来自于木易阳的 Github 整理和个人平时面试经验。题库收集原则上仅供笔者个人学习整理所用，一切版权都归 Reference 及相应公司所有。从五月起每天一段 JavaScript 代码段，主要来源于 30s-of-code 让写代码像呼吸一样自然。  2019/05/08 如何把一个字符串的大小写取反（大写变小写小写变大写），例如 ’AbC’ 变成 ‘aBc’  30s-of-cod">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-05-08T13:34:26.945Z">
+<meta property="og:updated_time" content="2019-05-08T13:53:27.061Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="每天（不知道有几）道前端面试题（五月）">
 <meta name="twitter:description" content="题库主要来自于木易阳的 Github 整理和个人平时面试经验。题库收集原则上仅供笔者个人学习整理所用，一切版权都归 Reference 及相应公司所有。从五月起每天一段 JavaScript 代码段，主要来源于 30s-of-code 让写代码像呼吸一样自然。  2019/05/08 如何把一个字符串的大小写取反（大写变小写小写变大写），例如 ’AbC’ 变成 ‘aBc’  30s-of-cod">
@@ -346,7 +346,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  402
+                  508
                 </span>
               
 
@@ -362,7 +362,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  1
+                  2
                 </span>
               
             </div>
@@ -393,6 +393,8 @@
 <p><strong>bifurcate</strong><br>Splits values into two groups. If an element infilteris truthy, the corresponding element in the collection belongs to the first group; otherwise, it belongs to the second group.<br>UseArray.prototype.reduce()andArray.prototype.push()to add elements to groups, based onfilter.</p>
 <p>Example</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">bifurcate([<span class="string">'beep'</span>, <span class="string">'boop'</span>, <span class="string">'foo'</span>, <span class="string">'bar'</span>], [<span class="literal">true</span>, <span class="literal">true</span>, <span class="literal">false</span>, <span class="literal">true</span>]); <span class="comment">// [ ['beep', 'boop', 'bar'], ['foo'] ]</span></span><br></pre></td></tr></table></figure>
+<p><strong>Solution</strong></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">Splits values into two groups. If an element infilteris truthy, the corresponding element in the collection belongs to the first group;</span></span><br><span class="line"><span class="comment">otherwise, it belongs to the second group.</span></span><br><span class="line"><span class="comment">UseArray.prototype.reduce() and Array.prototype.push()to add elements to groups, based onfilter.</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment">**</span></span><br><span class="line"><span class="comment">* @param &#123;[]&#125; data</span></span><br><span class="line"><span class="comment">* @param &#123;[]&#125; filters</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"><span class="keyword">const</span> bifurcate = <span class="function">(<span class="params">data, filters</span>) =&gt;</span> &#123;</span><br><span class="line">    <span class="comment">// 逗号运算符返回最后一个结果哦</span></span><br><span class="line">    <span class="keyword">return</span> data.reduce(<span class="function">(<span class="params">acc, val, i</span>) =&gt;</span> (acc[filters[i] ? <span class="number">0</span> : <span class="number">1</span>].push(val), acc), [[], []])</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> res = bifurcate([<span class="string">'beep'</span>, <span class="string">'boop'</span>, <span class="string">'foo'</span>, <span class="string">'bar'</span>], [<span class="literal">true</span>, <span class="literal">true</span>, <span class="literal">false</span>, <span class="literal">true</span>]); <span class="comment">// [ ['beep', 'boop', 'bar'], ['foo'] ]</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(res);</span><br></pre></td></tr></table></figure>
 <h2 id="2019-05-07"><a href="#2019-05-07" class="headerlink" title="2019/05/07"></a>2019/05/07</h2><blockquote>
 <p>如何解决移动端 Retina 屏 1px 像素问题</p>
 </blockquote>
@@ -684,7 +686,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">56.8k</span>
+    <span title="Site words total count">56.9k</span>
   
 </div>
 
