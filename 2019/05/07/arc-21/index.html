@@ -79,18 +79,18 @@
 
 
 
-<meta name="description" content="题库主要来自于木易阳的 Github 整理和个人平时面试经验。题库收集原则上仅供笔者个人学习整理所用，一切版权都归 Reference 及相应公司所有。  2019/05/08 如何把一个字符串的大小写取反（大写变小写小写变大写），例如 ’AbC’ 变成 ‘aBc’  2019/05/07 如何解决移动端 Retina 屏 1px 像素问题  2019/05/06 随机生成一个长度为 10 的整">
+<meta name="description" content="题库主要来自于木易阳的 Github 整理和个人平时面试经验。题库收集原则上仅供笔者个人学习整理所用，一切版权都归 Reference 及相应公司所有。  2019/05/08 如何把一个字符串的大小写取反（大写变小写小写变大写），例如 ’AbC’ 变成 ‘aBc’  30s-of-code bifurcateSplits values into two groups. If an elemen">
 <meta name="keywords" content="front_end">
 <meta property="og:type" content="article">
 <meta property="og:title" content="每天（不知道有几）道前端面试题（五月）">
 <meta property="og:url" content="https://xkeith.space/2019/05/07/arc-21/index.html">
 <meta property="og:site_name" content="旧港">
-<meta property="og:description" content="题库主要来自于木易阳的 Github 整理和个人平时面试经验。题库收集原则上仅供笔者个人学习整理所用，一切版权都归 Reference 及相应公司所有。  2019/05/08 如何把一个字符串的大小写取反（大写变小写小写变大写），例如 ’AbC’ 变成 ‘aBc’  2019/05/07 如何解决移动端 Retina 屏 1px 像素问题  2019/05/06 随机生成一个长度为 10 的整">
+<meta property="og:description" content="题库主要来自于木易阳的 Github 整理和个人平时面试经验。题库收集原则上仅供笔者个人学习整理所用，一切版权都归 Reference 及相应公司所有。  2019/05/08 如何把一个字符串的大小写取反（大写变小写小写变大写），例如 ’AbC’ 变成 ‘aBc’  30s-of-code bifurcateSplits values into two groups. If an elemen">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-05-08T13:10:27.712Z">
+<meta property="og:updated_time" content="2019-05-08T13:27:18.583Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="每天（不知道有几）道前端面试题（五月）">
-<meta name="twitter:description" content="题库主要来自于木易阳的 Github 整理和个人平时面试经验。题库收集原则上仅供笔者个人学习整理所用，一切版权都归 Reference 及相应公司所有。  2019/05/08 如何把一个字符串的大小写取反（大写变小写小写变大写），例如 ’AbC’ 变成 ‘aBc’  2019/05/07 如何解决移动端 Retina 屏 1px 像素问题  2019/05/06 随机生成一个长度为 10 的整">
+<meta name="twitter:description" content="题库主要来自于木易阳的 Github 整理和个人平时面试经验。题库收集原则上仅供笔者个人学习整理所用，一切版权都归 Reference 及相应公司所有。  2019/05/08 如何把一个字符串的大小写取反（大写变小写小写变大写），例如 ’AbC’ 变成 ‘aBc’  30s-of-code bifurcateSplits values into two groups. If an elemen">
 
 
 
@@ -346,7 +346,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  313
+                  371
                 </span>
               
 
@@ -389,6 +389,10 @@
 <h2 id="2019-05-08"><a href="#2019-05-08" class="headerlink" title="2019/05/08"></a>2019/05/08</h2><blockquote>
 <p>如何把一个字符串的大小写取反（大写变小写小写变大写），例如 ’AbC’ 变成 ‘aBc’</p>
 </blockquote>
+<p><em>30s-of-code</em></p>
+<p><strong>bifurcate</strong><br>Splits values into two groups. If an element infilteris truthy, the corresponding element in the collection belongs to the first group; otherwise, it belongs to the second group.<br>UseArray.prototype.reduce()andArray.prototype.push()to add elements to groups, based onfilter.</p>
+<p>Example</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">bifurcate([<span class="string">'beep'</span>, <span class="string">'boop'</span>, <span class="string">'foo'</span>, <span class="string">'bar'</span>], [<span class="literal">true</span>, <span class="literal">true</span>, <span class="literal">false</span>, <span class="literal">true</span>]); <span class="comment">// [ ['beep', 'boop', 'bar'], ['foo'] ]</span></span><br></pre></td></tr></table></figure>
 <h2 id="2019-05-07"><a href="#2019-05-07" class="headerlink" title="2019/05/07"></a>2019/05/07</h2><blockquote>
 <p>如何解决移动端 Retina 屏 1px 像素问题</p>
 </blockquote>
