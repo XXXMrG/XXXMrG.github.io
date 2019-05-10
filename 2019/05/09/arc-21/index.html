@@ -79,19 +79,19 @@
 
 
 
-<meta name="description" content="题库主要来自于木易阳的 Github 整理和个人平时面试经验。题库收集原则上仅供笔者个人学习整理所用，一切版权都归 Reference 及相应公司所有。从五月起每天一段 JavaScript 代码段，主要来源于 30s-of-code 让写代码像呼吸一样自然。  2019/05/09 介绍下 webpack 热更新原理，是如何做到在不刷新浏览器的前提下更新页面的   30s-of-code Gr">
+<meta name="description" content="题库主要来自于木易阳的 Github 整理和个人平时面试经验。题库收集原则上仅供笔者个人学习整理所用，一切版权都归 Reference 及相应公司所有。从五月起每天一段 JavaScript 代码段，主要来源于 30s-of-code 让写代码像呼吸一样自然。  2019/05/1030s-of-code  Replaces all but the last num of characters">
 <meta name="keywords" content="front_end">
 <meta property="og:type" content="article">
 <meta property="og:title" content="每天（不知道有几）道前端面试题（五月）">
 <meta property="og:url" content="https://xkeith.space/2019/05/09/arc-21/index.html">
 <meta property="og:site_name" content="旧港">
-<meta property="og:description" content="题库主要来自于木易阳的 Github 整理和个人平时面试经验。题库收集原则上仅供笔者个人学习整理所用，一切版权都归 Reference 及相应公司所有。从五月起每天一段 JavaScript 代码段，主要来源于 30s-of-code 让写代码像呼吸一样自然。  2019/05/09 介绍下 webpack 热更新原理，是如何做到在不刷新浏览器的前提下更新页面的   30s-of-code Gr">
+<meta property="og:description" content="题库主要来自于木易阳的 Github 整理和个人平时面试经验。题库收集原则上仅供笔者个人学习整理所用，一切版权都归 Reference 及相应公司所有。从五月起每天一段 JavaScript 代码段，主要来源于 30s-of-code 让写代码像呼吸一样自然。  2019/05/1030s-of-code  Replaces all but the last num of characters">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="https://i.loli.net/2019/05/09/5cd437efaae2c.png">
-<meta property="og:updated_time" content="2019-05-09T14:27:54.770Z">
+<meta property="og:updated_time" content="2019-05-10T01:12:17.974Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="每天（不知道有几）道前端面试题（五月）">
-<meta name="twitter:description" content="题库主要来自于木易阳的 Github 整理和个人平时面试经验。题库收集原则上仅供笔者个人学习整理所用，一切版权都归 Reference 及相应公司所有。从五月起每天一段 JavaScript 代码段，主要来源于 30s-of-code 让写代码像呼吸一样自然。  2019/05/09 介绍下 webpack 热更新原理，是如何做到在不刷新浏览器的前提下更新页面的   30s-of-code Gr">
+<meta name="twitter:description" content="题库主要来自于木易阳的 Github 整理和个人平时面试经验。题库收集原则上仅供笔者个人学习整理所用，一切版权都归 Reference 及相应公司所有。从五月起每天一段 JavaScript 代码段，主要来源于 30s-of-code 让写代码像呼吸一样自然。  2019/05/1030s-of-code  Replaces all but the last num of characters">
 <meta name="twitter:image" content="https://i.loli.net/2019/05/09/5cd437efaae2c.png">
 
 
@@ -348,7 +348,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  728
+                  885
                 </span>
               
 
@@ -364,7 +364,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  3
+                  4
                 </span>
               
             </div>
@@ -388,6 +388,12 @@
         <hr>
 <font color="#FF0000">题库主要来自于<a href="http://yygmind.github.io/" target="_blank" rel="noopener">木易阳</a>的 Github 整理和个人平时面试经验。<br>题库收集原则上仅供笔者个人学习整理所用，一切版权都归 Reference 及相应公司所有。<br>从五月起每天一段 JavaScript 代码段，主要来源于 30s-of-code 让写代码像呼吸一样自然。<br></font>
 
+<h2 id="2019-05-10"><a href="#2019-05-10" class="headerlink" title="2019/05/10"></a>2019/05/10</h2><p><em>30s-of-code</em></p>
+<blockquote>
+<p>Replaces all but the last num of characters with the specified mask character.</p>
+<p>Use String.prototype.slice() to grab the portion of the characters that<br>will remain unmasked and use String.padStart()<br>to fill the beginning of the string with the mask character up to the original length.<br>Omit the second argument, num, to keep a default of 4 characters unmasked. If num is negative,<br>the unmasked characters will be at the start of the string.<br>Omit the third argument, mask, to use a default character of ‘*’ for the mask.</p>
+</blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="keyword">const</span> mask = <span class="function">(<span class="params">cc, num = <span class="number">4</span>, mask = <span class="string">"*"</span></span>) =&gt;</span> &#123;</span><br><span class="line">    <span class="comment">// 最右侧 num 个字符不变，在其左侧填充 mask 直到长度等于原字符串长度</span></span><br><span class="line">    <span class="keyword">return</span> <span class="string">`<span class="subst">$&#123;cc&#125;</span>`</span>.slice(-num).padStart(<span class="string">`<span class="subst">$&#123;cc&#125;</span>`</span>.length, mask);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> res = mask(<span class="string">"13123"</span>, <span class="number">3</span>, <span class="string">"$"</span>)</span><br><span class="line"><span class="built_in">console</span>.log(res)</span><br><span class="line">res = mask(<span class="string">"123123123fuck"</span>)</span><br><span class="line"><span class="built_in">console</span>.log(res);</span><br></pre></td></tr></table></figure>
 <h2 id="2019-05-09"><a href="#2019-05-09" class="headerlink" title="2019/05/09"></a>2019/05/09</h2><blockquote>
 <p>介绍下 webpack 热更新原理，是如何做到在不刷新浏览器的前提下更新页面的</p>
 </blockquote>
@@ -663,7 +669,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#2019-05-09"><span class="nav-number">1.</span> <span class="nav-text">2019/05/09</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2019-05-08"><span class="nav-number">2.</span> <span class="nav-text">2019/05/08</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2019-05-07"><span class="nav-number">3.</span> <span class="nav-text">2019/05/07</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2019-05-06"><span class="nav-number">4.</span> <span class="nav-text">2019/05/06</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2019-05-05"><span class="nav-number">5.</span> <span class="nav-text">2019/05/05</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2019-05-04"><span class="nav-number">6.</span> <span class="nav-text">2019/05/04</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2019-05-03"><span class="nav-number">7.</span> <span class="nav-text">2019/05/03</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2019-05-02"><span class="nav-number">8.</span> <span class="nav-text">2019/05/02</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2019-05-01"><span class="nav-number">9.</span> <span class="nav-text">2019/05/01</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#2019-05-10"><span class="nav-number">1.</span> <span class="nav-text">2019/05/10</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2019-05-09"><span class="nav-number">2.</span> <span class="nav-text">2019/05/09</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2019-05-08"><span class="nav-number">3.</span> <span class="nav-text">2019/05/08</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2019-05-07"><span class="nav-number">4.</span> <span class="nav-text">2019/05/07</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2019-05-06"><span class="nav-number">5.</span> <span class="nav-text">2019/05/06</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2019-05-05"><span class="nav-number">6.</span> <span class="nav-text">2019/05/05</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2019-05-04"><span class="nav-number">7.</span> <span class="nav-text">2019/05/04</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2019-05-03"><span class="nav-number">8.</span> <span class="nav-text">2019/05/03</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2019-05-02"><span class="nav-number">9.</span> <span class="nav-text">2019/05/02</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2019-05-01"><span class="nav-number">10.</span> <span class="nav-text">2019/05/01</span></a></li></ol></div>
             
 
           </div>
@@ -697,7 +703,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">57.1k</span>
+    <span title="Site words total count">57.2k</span>
   
 </div>
 
