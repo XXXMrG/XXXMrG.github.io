@@ -79,20 +79,21 @@
 
 
 
-<meta name="description" content="题库主要来自于木易阳的 Github 整理和个人平时面试经验。题库收集原则上仅供笔者个人学习整理所用，一切版权都归 Reference 及相应公司所有。从五月起每天一段 JavaScript 代码段，主要来源于 30s-of-code 让写代码像呼吸一样自然。    2019/05/1130s-of-code  chainAsync Chains asynchronous functions.">
+<meta name="description" content="题库主要来自于木易阳的 Github 整理和个人平时面试经验。题库收集原则上仅供笔者个人学习整理所用，一切版权都归 Reference 及相应公司所有。从五月起每天一段 JavaScript 代码段，主要来源于 30s-of-code 让写代码像呼吸一样自然。  2019/05/13 为什么普通 for 循环的性能远远高于 forEach 的性能，请解释其中的原因   for 循环没有任何额外的">
 <meta name="keywords" content="front_end">
 <meta property="og:type" content="article">
 <meta property="og:title" content="每天（不知道有几）道前端面试题（五月）">
-<meta property="og:url" content="https://xkeith.space/2019/05/09/arc-21/index.html">
+<meta property="og:url" content="https://xkeith.space/2019/05/13/arc-21/index.html">
 <meta property="og:site_name" content="旧港">
-<meta property="og:description" content="题库主要来自于木易阳的 Github 整理和个人平时面试经验。题库收集原则上仅供笔者个人学习整理所用，一切版权都归 Reference 及相应公司所有。从五月起每天一段 JavaScript 代码段，主要来源于 30s-of-code 让写代码像呼吸一样自然。    2019/05/1130s-of-code  chainAsync Chains asynchronous functions.">
+<meta property="og:description" content="题库主要来自于木易阳的 Github 整理和个人平时面试经验。题库收集原则上仅供笔者个人学习整理所用，一切版权都归 Reference 及相应公司所有。从五月起每天一段 JavaScript 代码段，主要来源于 30s-of-code 让写代码像呼吸一样自然。  2019/05/13 为什么普通 for 循环的性能远远高于 forEach 的性能，请解释其中的原因   for 循环没有任何额外的">
 <meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="https://i.loli.net/2019/05/13/5cd974a51190730530.png">
 <meta property="og:image" content="https://i.loli.net/2019/05/09/5cd437efaae2c.png">
-<meta property="og:updated_time" content="2019-05-11T14:25:00.189Z">
+<meta property="og:updated_time" content="2019-05-13T13:44:13.393Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="每天（不知道有几）道前端面试题（五月）">
-<meta name="twitter:description" content="题库主要来自于木易阳的 Github 整理和个人平时面试经验。题库收集原则上仅供笔者个人学习整理所用，一切版权都归 Reference 及相应公司所有。从五月起每天一段 JavaScript 代码段，主要来源于 30s-of-code 让写代码像呼吸一样自然。    2019/05/1130s-of-code  chainAsync Chains asynchronous functions.">
-<meta name="twitter:image" content="https://i.loli.net/2019/05/09/5cd437efaae2c.png">
+<meta name="twitter:description" content="题库主要来自于木易阳的 Github 整理和个人平时面试经验。题库收集原则上仅供笔者个人学习整理所用，一切版权都归 Reference 及相应公司所有。从五月起每天一段 JavaScript 代码段，主要来源于 30s-of-code 让写代码像呼吸一样自然。  2019/05/13 为什么普通 for 循环的性能远远高于 forEach 的性能，请解释其中的原因   for 循环没有任何额外的">
+<meta name="twitter:image" content="https://i.loli.net/2019/05/13/5cd974a51190730530.png">
 
 
 
@@ -122,7 +123,7 @@
 
 
 
-  <link rel="canonical" href="https://xkeith.space/2019/05/09/arc-21/">
+  <link rel="canonical" href="https://xkeith.space/2019/05/13/arc-21/">
 
 
 
@@ -265,7 +266,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://xkeith.space/2019/05/09/arc-21/">
+    <link itemprop="mainEntityOfPage" href="https://xkeith.space/2019/05/13/arc-21/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Keith">
@@ -294,8 +295,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-05-09T22:31:21+08:00">
-                2019-05-09
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-05-13T22:31:21+08:00">
+                2019-05-13
               </time>
             
 
@@ -348,7 +349,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  992
+                  1.1k
                 </span>
               
 
@@ -388,8 +389,17 @@
         <hr>
 <font color="#FF0000">题库主要来自于<a href="http://yygmind.github.io/" target="_blank" rel="noopener">木易阳</a>的 Github 整理和个人平时面试经验。<br>题库收集原则上仅供笔者个人学习整理所用，一切版权都归 Reference 及相应公司所有。<br>从五月起每天一段 JavaScript 代码段，主要来源于 30s-of-code 让写代码像呼吸一样自然。<br></font>
 
-
-
+<h2 id="2019-05-13"><a href="#2019-05-13" class="headerlink" title="2019/05/13"></a>2019/05/13</h2><blockquote>
+<p>为什么普通 for 循环的性能远远高于 forEach 的性能，请解释其中的原因</p>
+</blockquote>
+<ul>
+<li><p>for 循环没有任何额外的函数调用栈和上下文；</p>
+</li>
+<li><p>forEach函数签名实际上是</p>
+</li>
+</ul>
+<p><code>array.forEach(function(currentValue, index, arr), thisValue)</code><br>它不是普通的 for 循环的语法糖，还有诸多参数和上下文需要在执行的时候考虑进来，这里可能拖慢性能；</p>
+<p><img src="https://i.loli.net/2019/05/13/5cd974a51190730530.png" alt="5cd974a51190730530.png"></p>
 <h2 id="2019-05-11"><a href="#2019-05-11" class="headerlink" title="2019/05/11"></a>2019/05/11</h2><p><em>30s-of-code</em></p>
 <blockquote>
 <p>chainAsync</p>
@@ -472,7 +482,7 @@
   </li>
   <li class="post-copyright-link">
     <strong>本文链接：</strong>
-    <a href="https://xkeith.space/2019/05/09/arc-21/" title="每天（不知道有几）道前端面试题（五月）">https://xkeith.space/2019/05/09/arc-21/</a>
+    <a href="https://xkeith.space/2019/05/13/arc-21/" title="每天（不知道有几）道前端面试题（五月）">https://xkeith.space/2019/05/13/arc-21/</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>
@@ -678,7 +688,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#2019-05-11"><span class="nav-number">1.</span> <span class="nav-text">2019/05/11</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2019-05-10"><span class="nav-number">2.</span> <span class="nav-text">2019/05/10</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2019-05-09"><span class="nav-number">3.</span> <span class="nav-text">2019/05/09</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2019-05-08"><span class="nav-number">4.</span> <span class="nav-text">2019/05/08</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2019-05-07"><span class="nav-number">5.</span> <span class="nav-text">2019/05/07</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2019-05-06"><span class="nav-number">6.</span> <span class="nav-text">2019/05/06</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2019-05-05"><span class="nav-number">7.</span> <span class="nav-text">2019/05/05</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2019-05-04"><span class="nav-number">8.</span> <span class="nav-text">2019/05/04</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2019-05-03"><span class="nav-number">9.</span> <span class="nav-text">2019/05/03</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2019-05-02"><span class="nav-number">10.</span> <span class="nav-text">2019/05/02</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2019-05-01"><span class="nav-number">11.</span> <span class="nav-text">2019/05/01</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#2019-05-13"><span class="nav-number">1.</span> <span class="nav-text">2019/05/13</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2019-05-11"><span class="nav-number">2.</span> <span class="nav-text">2019/05/11</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2019-05-10"><span class="nav-number">3.</span> <span class="nav-text">2019/05/10</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2019-05-09"><span class="nav-number">4.</span> <span class="nav-text">2019/05/09</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2019-05-08"><span class="nav-number">5.</span> <span class="nav-text">2019/05/08</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2019-05-07"><span class="nav-number">6.</span> <span class="nav-text">2019/05/07</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2019-05-06"><span class="nav-number">7.</span> <span class="nav-text">2019/05/06</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2019-05-05"><span class="nav-number">8.</span> <span class="nav-text">2019/05/05</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2019-05-04"><span class="nav-number">9.</span> <span class="nav-text">2019/05/04</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2019-05-03"><span class="nav-number">10.</span> <span class="nav-text">2019/05/03</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2019-05-02"><span class="nav-number">11.</span> <span class="nav-text">2019/05/02</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2019-05-01"><span class="nav-number">12.</span> <span class="nav-text">2019/05/01</span></a></li></ol></div>
             
 
           </div>
@@ -712,7 +722,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">57.4k</span>
+    <span title="Site words total count">57.5k</span>
   
 </div>
 
