@@ -79,20 +79,20 @@
 
 
 
-<meta name="description" content="题库主要来自于木易阳的 Github 整理和个人平时面试经验。题库收集原则上仅供笔者个人学习整理所用，一切版权都归 Reference 及相应公司所有。从五月起每天一段 JavaScript 代码段，主要来源于 30s-of-code 让写代码像呼吸一样自然。  2019/05/13 为什么普通 for 循环的性能远远高于 forEach 的性能，请解释其中的原因   for 循环没有任何额外的">
+<meta name="description" content="题库主要来自于木易阳的 Github 整理和个人平时面试经验。题库收集原则上仅供笔者个人学习整理所用，一切版权都归 Reference 及相应公司所有。从五月起每天一段 JavaScript 代码段，主要来源于 30s-of-code 让写代码像呼吸一样自然。  2019/05/14 解释一下 vue 中的 $nextTick  你真的理解$nextTick么 - 掘金 30s-of-code">
 <meta name="keywords" content="front_end">
 <meta property="og:type" content="article">
 <meta property="og:title" content="每天（不知道有几）道前端面试题（五月）">
 <meta property="og:url" content="https://xkeith.space/2019/05/13/arc-21/index.html">
 <meta property="og:site_name" content="旧港">
-<meta property="og:description" content="题库主要来自于木易阳的 Github 整理和个人平时面试经验。题库收集原则上仅供笔者个人学习整理所用，一切版权都归 Reference 及相应公司所有。从五月起每天一段 JavaScript 代码段，主要来源于 30s-of-code 让写代码像呼吸一样自然。  2019/05/13 为什么普通 for 循环的性能远远高于 forEach 的性能，请解释其中的原因   for 循环没有任何额外的">
+<meta property="og:description" content="题库主要来自于木易阳的 Github 整理和个人平时面试经验。题库收集原则上仅供笔者个人学习整理所用，一切版权都归 Reference 及相应公司所有。从五月起每天一段 JavaScript 代码段，主要来源于 30s-of-code 让写代码像呼吸一样自然。  2019/05/14 解释一下 vue 中的 $nextTick  你真的理解$nextTick么 - 掘金 30s-of-code">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="https://i.loli.net/2019/05/13/5cd974a51190730530.png">
 <meta property="og:image" content="https://i.loli.net/2019/05/09/5cd437efaae2c.png">
-<meta property="og:updated_time" content="2019-05-13T13:44:13.393Z">
+<meta property="og:updated_time" content="2019-05-14T10:41:47.527Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="每天（不知道有几）道前端面试题（五月）">
-<meta name="twitter:description" content="题库主要来自于木易阳的 Github 整理和个人平时面试经验。题库收集原则上仅供笔者个人学习整理所用，一切版权都归 Reference 及相应公司所有。从五月起每天一段 JavaScript 代码段，主要来源于 30s-of-code 让写代码像呼吸一样自然。  2019/05/13 为什么普通 for 循环的性能远远高于 forEach 的性能，请解释其中的原因   for 循环没有任何额外的">
+<meta name="twitter:description" content="题库主要来自于木易阳的 Github 整理和个人平时面试经验。题库收集原则上仅供笔者个人学习整理所用，一切版权都归 Reference 及相应公司所有。从五月起每天一段 JavaScript 代码段，主要来源于 30s-of-code 让写代码像呼吸一样自然。  2019/05/14 解释一下 vue 中的 $nextTick  你真的理解$nextTick么 - 掘金 30s-of-code">
 <meta name="twitter:image" content="https://i.loli.net/2019/05/13/5cd974a51190730530.png">
 
 
@@ -349,7 +349,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  1.1k
+                  1.2k
                 </span>
               
 
@@ -389,6 +389,14 @@
         <hr>
 <font color="#FF0000">题库主要来自于<a href="http://yygmind.github.io/" target="_blank" rel="noopener">木易阳</a>的 Github 整理和个人平时面试经验。<br>题库收集原则上仅供笔者个人学习整理所用，一切版权都归 Reference 及相应公司所有。<br>从五月起每天一段 JavaScript 代码段，主要来源于 30s-of-code 让写代码像呼吸一样自然。<br></font>
 
+<h2 id="2019-05-14"><a href="#2019-05-14" class="headerlink" title="2019/05/14"></a>2019/05/14</h2><blockquote>
+<p>解释一下 vue 中的 $nextTick</p>
+</blockquote>
+<p><a href="https://juejin.im/post/5cd9854b5188252035420a13" target="_blank" rel="noopener">你真的理解$nextTick么 - 掘金</a></p>
+<p><em>30s-of-code</em></p>
+<p><em>Counts the occurrences of a value in an array.</em></p>
+<p><em>Use Array.prototype.reduce()</em><br><em>to increment a counter each time you encounter the specific value inside the array.</em></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">*</span></span><br><span class="line"><span class="comment">* @param &#123;[]&#125; arr</span></span><br><span class="line"><span class="comment">* @param &#123;*&#125; val</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"><span class="keyword">const</span> countOccurrences = <span class="function">(<span class="params">arr, val</span>) =&gt;</span></span><br><span class="line">    arr.reduce(<span class="function">(<span class="params">a, v</span>) =&gt;</span> (v === val ? a + <span class="number">1</span> : a), <span class="number">0</span>);</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(countOccurrences([<span class="number">1</span>, <span class="number">1</span>, <span class="number">2</span>, <span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>], <span class="number">2</span>));</span><br></pre></td></tr></table></figure>
 <h2 id="2019-05-13"><a href="#2019-05-13" class="headerlink" title="2019/05/13"></a>2019/05/13</h2><blockquote>
 <p>为什么普通 for 循环的性能远远高于 forEach 的性能，请解释其中的原因</p>
 </blockquote>
@@ -688,7 +696,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#2019-05-13"><span class="nav-number">1.</span> <span class="nav-text">2019/05/13</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2019-05-11"><span class="nav-number">2.</span> <span class="nav-text">2019/05/11</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2019-05-10"><span class="nav-number">3.</span> <span class="nav-text">2019/05/10</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2019-05-09"><span class="nav-number">4.</span> <span class="nav-text">2019/05/09</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2019-05-08"><span class="nav-number">5.</span> <span class="nav-text">2019/05/08</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2019-05-07"><span class="nav-number">6.</span> <span class="nav-text">2019/05/07</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2019-05-06"><span class="nav-number">7.</span> <span class="nav-text">2019/05/06</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2019-05-05"><span class="nav-number">8.</span> <span class="nav-text">2019/05/05</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2019-05-04"><span class="nav-number">9.</span> <span class="nav-text">2019/05/04</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2019-05-03"><span class="nav-number">10.</span> <span class="nav-text">2019/05/03</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2019-05-02"><span class="nav-number">11.</span> <span class="nav-text">2019/05/02</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2019-05-01"><span class="nav-number">12.</span> <span class="nav-text">2019/05/01</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#2019-05-14"><span class="nav-number">1.</span> <span class="nav-text">2019/05/14</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2019-05-13"><span class="nav-number">2.</span> <span class="nav-text">2019/05/13</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2019-05-11"><span class="nav-number">3.</span> <span class="nav-text">2019/05/11</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2019-05-10"><span class="nav-number">4.</span> <span class="nav-text">2019/05/10</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2019-05-09"><span class="nav-number">5.</span> <span class="nav-text">2019/05/09</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2019-05-08"><span class="nav-number">6.</span> <span class="nav-text">2019/05/08</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2019-05-07"><span class="nav-number">7.</span> <span class="nav-text">2019/05/07</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2019-05-06"><span class="nav-number">8.</span> <span class="nav-text">2019/05/06</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2019-05-05"><span class="nav-number">9.</span> <span class="nav-text">2019/05/05</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2019-05-04"><span class="nav-number">10.</span> <span class="nav-text">2019/05/04</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2019-05-03"><span class="nav-number">11.</span> <span class="nav-text">2019/05/03</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2019-05-02"><span class="nav-number">12.</span> <span class="nav-text">2019/05/02</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2019-05-01"><span class="nav-number">13.</span> <span class="nav-text">2019/05/01</span></a></li></ol></div>
             
 
           </div>
