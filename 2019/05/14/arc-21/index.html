@@ -79,20 +79,20 @@
 
 
 
-<meta name="description" content="题库主要来自于木易阳的 Github 整理和个人平时面试经验。题库收集原则上仅供笔者个人学习整理所用，一切版权都归 Reference 及相应公司所有。从五月起每天一段 JavaScript 代码段，主要来源于 30s-of-code 让写代码像呼吸一样自然。  2019/05/14 解释一下 vue 中的 $nextTick  你真的理解$nextTick么 - 掘金 30s-of-code">
+<meta name="description" content="题库主要来自于木易阳的 Github 整理和个人平时面试经验。题库收集原则上仅供笔者个人学习整理所用，一切版权都归 Reference 及相应公司所有。从五月起每天一段 JavaScript 代码段，主要来源于 30s-of-code 让写代码像呼吸一样自然。  2019/05/14 解释一下 vue 中的 $nextTick  你真的理解$nextTick么 - 掘金  在下次 DOM 更新循">
 <meta name="keywords" content="front_end">
 <meta property="og:type" content="article">
 <meta property="og:title" content="每天（不知道有几）道前端面试题（五月）">
-<meta property="og:url" content="https://xkeith.space/2019/05/13/arc-21/index.html">
+<meta property="og:url" content="https://xkeith.space/2019/05/14/arc-21/index.html">
 <meta property="og:site_name" content="旧港">
-<meta property="og:description" content="题库主要来自于木易阳的 Github 整理和个人平时面试经验。题库收集原则上仅供笔者个人学习整理所用，一切版权都归 Reference 及相应公司所有。从五月起每天一段 JavaScript 代码段，主要来源于 30s-of-code 让写代码像呼吸一样自然。  2019/05/14 解释一下 vue 中的 $nextTick  你真的理解$nextTick么 - 掘金 30s-of-code">
+<meta property="og:description" content="题库主要来自于木易阳的 Github 整理和个人平时面试经验。题库收集原则上仅供笔者个人学习整理所用，一切版权都归 Reference 及相应公司所有。从五月起每天一段 JavaScript 代码段，主要来源于 30s-of-code 让写代码像呼吸一样自然。  2019/05/14 解释一下 vue 中的 $nextTick  你真的理解$nextTick么 - 掘金  在下次 DOM 更新循">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="https://i.loli.net/2019/05/13/5cd974a51190730530.png">
 <meta property="og:image" content="https://i.loli.net/2019/05/09/5cd437efaae2c.png">
-<meta property="og:updated_time" content="2019-05-14T10:41:47.527Z">
+<meta property="og:updated_time" content="2019-05-14T11:05:26.584Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="每天（不知道有几）道前端面试题（五月）">
-<meta name="twitter:description" content="题库主要来自于木易阳的 Github 整理和个人平时面试经验。题库收集原则上仅供笔者个人学习整理所用，一切版权都归 Reference 及相应公司所有。从五月起每天一段 JavaScript 代码段，主要来源于 30s-of-code 让写代码像呼吸一样自然。  2019/05/14 解释一下 vue 中的 $nextTick  你真的理解$nextTick么 - 掘金 30s-of-code">
+<meta name="twitter:description" content="题库主要来自于木易阳的 Github 整理和个人平时面试经验。题库收集原则上仅供笔者个人学习整理所用，一切版权都归 Reference 及相应公司所有。从五月起每天一段 JavaScript 代码段，主要来源于 30s-of-code 让写代码像呼吸一样自然。  2019/05/14 解释一下 vue 中的 $nextTick  你真的理解$nextTick么 - 掘金  在下次 DOM 更新循">
 <meta name="twitter:image" content="https://i.loli.net/2019/05/13/5cd974a51190730530.png">
 
 
@@ -123,7 +123,7 @@
 
 
 
-  <link rel="canonical" href="https://xkeith.space/2019/05/13/arc-21/">
+  <link rel="canonical" href="https://xkeith.space/2019/05/14/arc-21/">
 
 
 
@@ -266,7 +266,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://xkeith.space/2019/05/13/arc-21/">
+    <link itemprop="mainEntityOfPage" href="https://xkeith.space/2019/05/14/arc-21/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Keith">
@@ -295,8 +295,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-05-13T22:31:21+08:00">
-                2019-05-13
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-05-14T22:31:21+08:00">
+                2019-05-14
               </time>
             
 
@@ -349,7 +349,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  1.2k
+                  1.6k
                 </span>
               
 
@@ -365,7 +365,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  5
+                  7
                 </span>
               
             </div>
@@ -393,6 +393,10 @@
 <p>解释一下 vue 中的 $nextTick</p>
 </blockquote>
 <p><a href="https://juejin.im/post/5cd9854b5188252035420a13" target="_blank" rel="noopener">你真的理解$nextTick么 - 掘金</a></p>
+<blockquote>
+<p>在下次 DOM 更新循环结束之后执行延迟回调。在修改数据之后立即使用这个方法，获取更新后的 DOM。<br>2.1.0 起新增：如果没有提供回调且在支持 Promise 的环境中，则返回一个 Promise。请注意 Vue 不自带 Promise 的 polyfill，所以如果你的目标浏览器不原生支持 Promise (IE：你们都看我干嘛)，你得自己提供 polyfill。<br>可能你还没有注意到，Vue 异步执行 DOM 更新。只要观察到数据变化，Vue 将开启一个队列，并缓冲在同一事件循环中发生的所有数据改变。如果同一个 watcher 被多次触发，只会被推入到队列中一次。这种在缓冲时去除重复数据对于避免不必要的计算和 DOM 操作上非常重要。然后，在下一个的事件循环“tick”中，Vue 刷新队列并执行实际 (已去重的) 工作。Vue 在内部尝试对异步队列使用原生的 Promise.then 和 MessageChannel，如果执行环境不支持，会采用 setTimeout(fn, 0) 代替。</p>
+</blockquote>
+<p>实际上 <code>$nextTick</code> 是一个微任务，因此在 JavaScript 引擎结束工作后会立即调用微任务队列中的回调函数，因为一个 Evevt Loop 的执行流程是 宏任务 -&gt; 微任务 -&gt; GUI 引擎 -&gt; 下一个宏任务。<br>因此使用 <code>$nextTick</code> 的好处在于可以最早的拿到修改后的 DOM 对象，不需要非要等待 GUI 渲染结束。</p>
 <p><em>30s-of-code</em></p>
 <p><em>Counts the occurrences of a value in an array.</em></p>
 <p><em>Use Array.prototype.reduce()</em><br><em>to increment a counter each time you encounter the specific value inside the array.</em></p>
@@ -490,7 +494,7 @@
   </li>
   <li class="post-copyright-link">
     <strong>本文链接：</strong>
-    <a href="https://xkeith.space/2019/05/13/arc-21/" title="每天（不知道有几）道前端面试题（五月）">https://xkeith.space/2019/05/13/arc-21/</a>
+    <a href="https://xkeith.space/2019/05/14/arc-21/" title="每天（不知道有几）道前端面试题（五月）">https://xkeith.space/2019/05/14/arc-21/</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>
@@ -730,7 +734,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">57.5k</span>
+    <span title="Site words total count">57.9k</span>
   
 </div>
 
