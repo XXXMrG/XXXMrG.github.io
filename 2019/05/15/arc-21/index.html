@@ -89,7 +89,7 @@
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="https://i.loli.net/2019/05/13/5cd974a51190730530.png">
 <meta property="og:image" content="https://i.loli.net/2019/05/09/5cd437efaae2c.png">
-<meta property="og:updated_time" content="2019-05-17T14:57:35.895Z">
+<meta property="og:updated_time" content="2019-05-19T02:46:01.909Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="每天（不知道有几）道前端面试题（五月）">
 <meta name="twitter:description" content="题库主要来自于木易阳的 Github 整理和个人平时面试经验。题库收集原则上仅供笔者个人学习整理所用，一切版权都归 Reference 及相应公司所有。从五月起每天一段 JavaScript 代码段，主要来源于 30s-of-code 让写代码像呼吸一样自然。  2019/05/17 输出以下代码运行结果  12345678910111213141516171819// example 1var">
@@ -349,7 +349,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  2k
+                  2.2k
                 </span>
               
 
@@ -365,7 +365,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  9
+                  10
                 </span>
               
             </div>
@@ -403,6 +403,13 @@
 <h2 id="2019-05-16"><a href="#2019-05-16" class="headerlink" title="2019/05/16"></a>2019/05/16</h2><blockquote>
 <p>详细解释一下 HTML 5 中的 hash 和 history ，他们常用的 API，以及浏览器实现两种不同的路由方式的原理。</p>
 </blockquote>
+<p><a href="https://blog.csdn.net/A13330069275/article/details/81010638" target="_blank" rel="noopener">hash 和 history的区别 - A13330069275的博客 - CSDN博客</a></p>
+<p><em>history</em></p>
+<p><code>pushState()</code><br><code>replaceState()</code></p>
+<p>history 的实现基于浏览器的历史记录栈，通过对历史记录的修改来跳转页面，因此 history 虽然改变了路由，并不会向服务器发送请求。<br>这样带来的问题是一般的单页面应用是不会覆盖全所有页面的路由的，这样一来用户如果直接输入 URL 或者刷新页面去强制请求服务器的话就会 404，因此需要我们在服务端配置好。</p>
+<p><em>hash</em></p>
+<p><code>hashChange()</code></p>
+<p>hash 模式下，只有 hash 符号前的 URL 才会被请求到服务端，因此即使后端没有做到对路由的全覆盖也不会出现 404。</p>
 <h2 id="2019-05-15"><a href="#2019-05-15" class="headerlink" title="2019/05/15"></a>2019/05/15</h2><blockquote>
 <p>使用 JavaScript Proxy 实现简单的数据绑定</p>
 </blockquote>
@@ -755,7 +762,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">58.4k</span>
+    <span title="Site words total count">58.6k</span>
   
 </div>
 
