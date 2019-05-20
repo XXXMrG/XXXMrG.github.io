@@ -83,14 +83,14 @@
 <meta name="keywords" content="front_end">
 <meta property="og:type" content="article">
 <meta property="og:title" content="每天（不知道有几）道前端面试题（五月）">
-<meta property="og:url" content="https://xkeith.space/2019/05/15/arc-21/index.html">
+<meta property="og:url" content="https://xkeith.space/2019/05/20/arc-21/index.html">
 <meta property="og:site_name" content="旧港">
 <meta property="og:description" content="题库主要来自于木易阳的 Github 整理和个人平时面试经验。题库收集原则上仅供笔者个人学习整理所用，一切版权都归 Reference 及相应公司所有。从五月起每天一段 JavaScript 代码段，主要来源于 30s-of-code 让写代码像呼吸一样自然。  2019/05/20字节跳动 2019 年春招前端开发实习生一面  详细解释一下同源策略 字符串类型转换的问题 JavaScript">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="https://i.loli.net/2019/05/20/5ce268268730d39806.png">
 <meta property="og:image" content="https://i.loli.net/2019/05/13/5cd974a51190730530.png">
 <meta property="og:image" content="https://i.loli.net/2019/05/09/5cd437efaae2c.png">
-<meta property="og:updated_time" content="2019-05-20T08:41:21.183Z">
+<meta property="og:updated_time" content="2019-05-20T08:48:42.992Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="每天（不知道有几）道前端面试题（五月）">
 <meta name="twitter:description" content="题库主要来自于木易阳的 Github 整理和个人平时面试经验。题库收集原则上仅供笔者个人学习整理所用，一切版权都归 Reference 及相应公司所有。从五月起每天一段 JavaScript 代码段，主要来源于 30s-of-code 让写代码像呼吸一样自然。  2019/05/20字节跳动 2019 年春招前端开发实习生一面  详细解释一下同源策略 字符串类型转换的问题 JavaScript">
@@ -124,7 +124,7 @@
 
 
 
-  <link rel="canonical" href="https://xkeith.space/2019/05/15/arc-21/">
+  <link rel="canonical" href="https://xkeith.space/2019/05/20/arc-21/">
 
 
 
@@ -267,7 +267,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://xkeith.space/2019/05/15/arc-21/">
+    <link itemprop="mainEntityOfPage" href="https://xkeith.space/2019/05/20/arc-21/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Keith">
@@ -296,8 +296,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-05-15T12:00:00+08:00">
-                2019-05-15
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-05-20T12:00:00+08:00">
+                2019-05-20
               </time>
             
 
@@ -426,7 +426,7 @@
 <li>读程序说结果</li>
 </ul>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> p = <span class="keyword">new</span> <span class="built_in">Promise</span>(<span class="function"><span class="params">resolve</span> =&gt;</span> &#123;</span><br><span class="line">	resolve(<span class="number">1</span>);</span><br><span class="line">  <span class="built_in">Promise</span>.resolve(<span class="number">2</span>).then(<span class="built_in">console</span>.log);</span><br><span class="line">&#125;);</span><br><span class="line">p.then(<span class="built_in">console</span>.log);</span><br><span class="line"></span><br><span class="line"><span class="comment">// =&gt; 2 1</span></span><br><span class="line"><span class="comment">// 思考为什么？</span></span><br></pre></td></tr></table></figure>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&lt;div id = <span class="string">"parent"</span>&gt; &lt;div id = "child"&gt; &lt;/div&gt; &lt;<span class="regexp">/div&gt;</span></span><br><span class="line"><span class="regexp"></span></span><br><span class="line"><span class="regexp">parent.addEventListener("click", () =&gt; alert(1));</span></span><br><span class="line"><span class="regexp">parent.addEnentListener("click", () =&gt; alert(2), true);</span></span><br><span class="line"><span class="regexp">child.addEventListener("click", () =&gt; alert(3));</span></span><br><span class="line"><span class="regexp">child.addEventListener("click", () =&gt; alert(4), true);</span></span><br><span class="line"><span class="regexp"></span></span><br><span class="line"><span class="regexp">/</span><span class="regexp">/ =&gt; 2 3 4 1</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span> = <span class="string">"parent"</span>&gt;</span> <span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span> = <span class="string">"child"</span>&gt;</span> <span class="tag">&lt;/<span class="name">div</span>&gt;</span> <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="javascript">    parent.addEventListener(<span class="string">"click"</span>, () =&gt; alert(<span class="number">1</span>));</span></span><br><span class="line"><span class="javascript">    parent.addEnentListener(<span class="string">"click"</span>, () =&gt; alert(<span class="number">2</span>), <span class="literal">true</span>);</span></span><br><span class="line"><span class="javascript">    child.addEventListener(<span class="string">"click"</span>, () =&gt; alert(<span class="number">3</span>));</span></span><br><span class="line"><span class="javascript">    child.addEventListener(<span class="string">"click"</span>, () =&gt; alert(<span class="number">4</span>), <span class="literal">true</span>);</span></span><br><span class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line">// =&gt; 2 3 4 1</span><br></pre></td></tr></table></figure>
 <h2 id="2019-05-17"><a href="#2019-05-17" class="headerlink" title="2019/05/17"></a>2019/05/17</h2><blockquote>
 <p>输出以下代码运行结果</p>
 </blockquote>
@@ -560,7 +560,7 @@
   </li>
   <li class="post-copyright-link">
     <strong>本文链接：</strong>
-    <a href="https://xkeith.space/2019/05/15/arc-21/" title="每天（不知道有几）道前端面试题（五月）">https://xkeith.space/2019/05/15/arc-21/</a>
+    <a href="https://xkeith.space/2019/05/20/arc-21/" title="每天（不知道有几）道前端面试题（五月）">https://xkeith.space/2019/05/20/arc-21/</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>
